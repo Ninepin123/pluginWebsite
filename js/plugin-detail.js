@@ -107,13 +107,11 @@ class PluginDetailPage {
             versionElement.textContent = `v${this.plugin.version}`;
         }
 
-        // 更新評分
+        // 移除評分顯示
         const ratingElement = document.getElementById('pluginRating');
         if (ratingElement) {
-            ratingElement.innerHTML = `⭐ ${this.plugin.rating}`;
+            ratingElement.style.display = 'none';
         }
-
-
     }
 
     renderPluginContent() {
@@ -139,10 +137,16 @@ class PluginDetailPage {
     }
 
     renderSidebar() {
-        // 更新側邊欄資訊
+        // 更新側邊欄資訊 - 移除評分相關顯示
         this.updateElement('sidebarVersion', `v${this.plugin.version}`);
         this.updateElement('sidebarMcVersion', this.plugin.mcVersion);
-        this.updateElement('sidebarRating', `⭐ ${this.plugin.rating}`);
+        
+        // 隱藏評分顯示
+        const sidebarRating = document.getElementById('sidebarRating');
+        if (sidebarRating) {
+            sidebarRating.parentElement.style.display = 'none';
+        }
+        
         this.updateElement('sidebarDevelopmentTime', '2-3 週'); // 可以根據需要調整
         this.updateElement('sidebarLastUpdate', this.formatDate(this.plugin.lastUpdate));
 
@@ -193,8 +197,7 @@ class PluginDetailPage {
                             <h4 class="related-plugin-name">${plugin.name}</h4>
                             <p class="related-plugin-desc">${plugin.shortDescription}</p>
                             <div class="related-plugin-meta">
-                                <span class="related-plugin-rating">⭐ ${plugin.rating}</span>
-                                <span class="related-plugin-downloads">${this.formatNumber(plugin.downloads)} 下載</span>
+                                <span class="related-plugin-category">${this.getCategoryInfo(plugin.category).name}</span>
                             </div>
                         </div>
                         <a href="plugin-detail.html?id=${plugin.id}" class="related-plugin-link">
@@ -394,7 +397,7 @@ class PluginDetailPage {
         });
     }
 
-    shareToplatform(platform) {
+    shareToPlatform(platform) {
         const url = window.location.href;
         const text = `查看這個很棒的 Minecraft 插件：${this.plugin.name}`;
         
@@ -416,7 +419,7 @@ class PluginDetailPage {
 }
 
 // ==========================================
-// 附加樣式 (原始程式碼保留)
+// 附加樣式
 // ==========================================
 
 const detailPageStyles = `
@@ -686,6 +689,13 @@ const detailPageStyles = `
         font-size: 0.8rem;
     }
 
+    .related-plugin-category {
+        background: var(--bg-tertiary);
+        padding: 0.25rem 0.5rem;
+        border-radius: 12px;
+        white-space: nowrap;
+    }
+
     .related-plugin-link {
         background: var(--primary-color);
         color: white;
@@ -754,113 +764,12 @@ detailStyleElement.textContent = detailPageStyles;
 document.head.appendChild(detailStyleElement);
 
 // ==========================================
-// 插件列表頁面功能 (新功能)
-// ==========================================
-
-class PluginListPage {
-    constructor() {
-        this.pluginsContainer = document.getElementById('plugin-list-container');
-        this.categoryFilter = document.getElementById('categoryFilter');
-        this.noResultsMessage = document.getElementById('no-results-message');
-        this.allPlugins = [];
-        this.allCategories = [];
-        this.init();
-    }
-
-    async init() {
-        if (!this.pluginsContainer || !this.categoryFilter) return;
-
-        await this.loadData();
-        this.populateCategoryFilter();
-        this.renderPlugins('all');
-        this.setupEventListeners();
-    }
-
-    async loadData() {
-        try {
-            const response = await fetch('data/plugins.json');
-            const data = await response.json();
-            this.allPlugins = data.plugins;
-            this.allCategories = data.categories;
-        } catch (error) {
-            console.error('Failed to load plugin data:', error);
-            if (this.pluginsContainer) {
-                this.pluginsContainer.innerHTML = '<p class="no-results">讀取作品失敗，請稍後再試。</p>';
-            }
-        }
-    }
-
-    populateCategoryFilter() {
-        this.allCategories.forEach(category => {
-            const option = document.createElement('option');
-            option.value = category.id;
-            option.textContent = category.name;
-            this.categoryFilter.appendChild(option);
-        });
-    }
-
-    renderPlugins(filterCategory) {
-        this.pluginsContainer.innerHTML = ''; // 清空現有內容
-
-        const filteredPlugins = (filterCategory === 'all')
-            ? this.allPlugins
-            : this.allPlugins.filter(plugin => plugin.category === filterCategory);
-
-        if (filteredPlugins.length === 0) {
-            this.noResultsMessage.style.display = 'block';
-        } else {
-            this.noResultsMessage.style.display = 'none';
-            filteredPlugins.forEach(plugin => {
-                const card = this.createPluginCard(plugin);
-                this.pluginsContainer.appendChild(card);
-            });
-        }
-    }
-
-    createPluginCard(plugin) {
-        const card = document.createElement('div');
-        card.className = 'plugin-card';
-        if (plugin.featured) {
-            card.classList.add('featured');
-        }
-
-        const categoryInfo = this.allCategories.find(cat => cat.id === plugin.category) || { name: plugin.category };
-
-        card.innerHTML = `
-            <div class="card-icon">${plugin.icon}</div>
-            <div class="card-content">
-                <h3 class="card-title">${plugin.name}</h3>
-                <p class="card-desc">${plugin.shortDescription}</p>
-                <div class="card-meta">
-                    <span class="card-category">${categoryInfo.name}</span>
-                    <span class="card-version">v${plugin.version}</span>
-                </div>
-            </div>
-            <a href="plugin-detail.html?id=${plugin.id}" class="card-link">查看詳情</a>
-        `;
-        return card;
-    }
-    
-    setupEventListeners() {
-        this.categoryFilter.addEventListener('change', (e) => {
-            this.renderPlugins(e.target.value);
-        });
-    }
-}
-
-
-// ==========================================
-// 初始化 (更新後的邏輯)
+// 初始化
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    const pathname = window.location.pathname;
-
-    if (pathname.includes('plugin-detail.html')) {
+    if (window.location.pathname.includes('plugin-detail.html')) {
         window.pluginDetailPage = new PluginDetailPage();
-    } 
-    else if (pathname.includes('plugins.html')) {
-        window.pluginListPage = new PluginListPage();
     }
 });
 

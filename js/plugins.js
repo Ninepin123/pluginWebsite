@@ -132,14 +132,14 @@ class PluginManager {
             case 'name':
                 plugins.sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case 'downloads':
-                plugins.sort((a, b) => b.downloads - a.downloads);
-                break;
-            case 'rating':
-                plugins.sort((a, b) => b.rating - a.rating);
-                break;
             case 'updated':
                 plugins.sort((a, b) => new Date(b.lastUpdate) - new Date(a.lastUpdate));
+                break;
+            // 移除 downloads 和 rating 的排序選項，或保留但不依賴這些數據
+            case 'downloads':
+            case 'rating':
+                // 改為按名稱排序
+                plugins.sort((a, b) => a.name.localeCompare(b.name));
                 break;
         }
     }
@@ -171,7 +171,6 @@ class PluginManager {
     }
 
     createPluginCard(plugin) {
-        const stars = this.generateStars(plugin.rating);
         const categoryInfo = this.getCategoryInfo(plugin.category);
 
         return `
@@ -185,7 +184,6 @@ class PluginManager {
                     
                     <div class="plugin-card-meta">
                         <span class="plugin-category">${categoryInfo.name}</span>
-                        <span class="plugin-rating">${stars} ${plugin.rating}</span>
                     </div>
                     
                     <div class="plugin-info">
@@ -196,10 +194,6 @@ class PluginManager {
                         <div class="plugin-info-item">
                             <span class="info-label">Minecraft:</span>
                             <span class="info-value">${plugin.mcVersion}</span>
-                        </div>
-                        <div class="plugin-info-item">
-                            <span class="info-label">評分:</span>
-                            <span class="info-value">⭐ ${plugin.rating}</span>
                         </div>
                         <div class="plugin-info-item">
                             <span class="info-label">更新:</span>
@@ -215,16 +209,6 @@ class PluginManager {
                 </div>
             </div>
         `;
-    }
-
-    generateStars(rating) {
-        const fullStars = Math.floor(rating);
-        const hasHalfStar = rating % 1 !== 0;
-        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-        
-        return '⭐'.repeat(fullStars) + 
-               (hasHalfStar ? '⭐' : '') + 
-               '☆'.repeat(emptyStars);
     }
 
     getCategoryInfo(categoryId) {
@@ -358,7 +342,6 @@ class HomePageLoader {
                     
                     <div class="plugin-card-meta">
                         <span class="plugin-category">${plugin.category}</span>
-                        <span class="plugin-rating">⭐ ${plugin.rating}</span>
                     </div>
                 </div>
                 
@@ -391,4 +374,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 導出類別供其他腳本使用
 window.PluginManager = PluginManager;
-window.HomePageLoader = HomePageLoader; 
+window.HomePageLoader = HomePageLoader;
