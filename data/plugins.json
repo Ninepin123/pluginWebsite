@@ -328,14 +328,9 @@
   ],
   "categories": [
     {
-      "id": "economy",
-      "name": "經濟系統",
-      "description": "貨幣、商店、交易相關插件"
-    },
-    {
-      "id": "pvp",
-      "name": "PVP",
-      "description": "戰鬥、競技場、對戰相關插件"
+      "id": "dungeon",
+      "name": "副本系統",
+      "description": "副本、Mythicmob相關插件"
     },
     {
       "id": "utility",
@@ -343,9 +338,9 @@
       "description": "輔助功能和實用工具插件"
     },
     {
-      "id": "fun",
-      "name": "娛樂",
-      "description": "小遊戲和娛樂相關插件"
+      "id": "discord",
+      "name": "DC機器人",
+      "description": "串接遊戲內與dc的互動"
     },
     {
       "id": "admin",

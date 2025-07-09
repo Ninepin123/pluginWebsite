@@ -3,205 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>開發作品集 - 專業 Minecraft 插件開發服務</title>
+    <title>作品集 - npstudio Minecraft 插件開發</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="icon" href="assets/icons/favicon.ico">
 </head>
 <body>
-    <!-- 導航欄 -->
+    <!-- 導航欄 (與您現有的相同) -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="assets/icons/minecraft-block.svg" alt="Logo" class="nav-logo">
-                <span class="nav-title">專業開發</span>
+                <img src="assets/icons/minecraft-block.jpg" alt="Logo" class="nav-logo">
+                <span class="nav-title">npstudio 開發</span>
             </div>
             <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">首頁</a></li>
+                <li class="nav-item"><a href="plugins.html" class="nav-link">作品集</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">關於我</a></li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">首頁</a>
-                </li>
-                <li class="nav-item">
-                    <a href="plugins.html" class="nav-link active">作品集</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">專業服務</a>
-                </li>
-                <li class="nav-item">
-                    <button class="theme-toggle" id="themeToggle">
-                        <span class="theme-icon">🌙</span>
-                    </button>
+                    <button class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span></button>
                 </li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
     <!-- 主要內容 -->
     <main class="main-content">
-        <!-- 頁面標題 -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">開發作品集</h1>
-                <p class="page-subtitle">展示我的 Minecraft 插件開發實力與專業技術</p>
+                <h1>作品集</h1>
+                <p>探索我開發的各類 Minecraft 插件</p>
             </div>
         </section>
 
-        <!-- 團隊特色與服務介紹 -->
-        <section class="team-intro">
+        <!-- 插件篩選器 -->
+        <section class="plugin-filters">
             <div class="container">
-                <div class="intro-grid">
-                    <!-- 團隊特色 -->
-                    <div class="intro-card">
-                        <div class="intro-header">
-                            <div class="intro-icon">🎯</div>
-                            <h2 class="intro-title">團隊特色</h2>
-                        </div>
-                        <ul class="intro-features">
-                            <li class="feature-item">
-                                <span class="feature-icon">⚡</span>
-                                <span class="feature-text">各種客製化需求，小到一個指令，大到一個系統！！</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">🎮</span>
-                                <span class="feature-text">設定簡單，操作方便</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">💬</span>
-                                <span class="feature-text">與開發者直接對談，省去溝通成本</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">💰</span>
-                                <span class="feature-text">價格實惠，隨時回報進度</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">🔧</span>
-                                <span class="feature-text">免費後續維護，若有額外功能需求也會有所折價</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 主要開發 -->
-                    <div class="intro-card">
-                        <div class="intro-header">
-                            <div class="intro-icon">🛠️</div>
-                            <h2 class="intro-title">主要開發</h2>
-                        </div>
-                        <div class="development-info">
-                            <div class="dev-section">
-                                <h3 class="dev-subtitle">支援核心</h3>
-                                <div class="platform-tags">
-                                    <span class="platform-tag supported">Paper</span>
-                                    <span class="platform-tag supported">Spigot</span>
-                                    <span class="platform-tag supported">Bukkit</span>
-                                </div>
-                            </div>
-                            <div class="dev-section">
-                                <h3 class="dev-subtitle">暫不支援</h3>
-                                <div class="platform-tags">
-                                    <span class="platform-tag not-supported">Folia</span>
-                                </div>
-                                <p class="dev-note">Folia 核心暫不接單</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 搜尋和篩選 -->
-        <section class="filters">
-            <div class="container">
-                <div class="filter-bar">
-                    <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="搜尋作品..." class="search-input">
-                        <button class="search-btn">🔍</button>
-                    </div>
-                    <div class="filter-options">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="categoryFilter" class="filter-label">篩選分類:</label>
                         <select id="categoryFilter" class="filter-select">
-                            <option value="">所有分類</option>
-                            <option value="economy">經濟系統</option>
-                            <option value="pvp">PVP</option>
-                            <option value="utility">實用工具</option>
-                            <option value="fun">娛樂</option>
-                            <option value="admin">管理工具</option>
-                        </select>
-                        <select id="versionFilter" class="filter-select">
-                            <option value="">所有版本</option>
-                            <option value="1.20">1.20.x</option>
-                            <option value="1.19">1.19.x</option>
-                            <option value="1.18">1.18.x</option>
-                            <option value="1.17">1.17.x</option>
-                        </select>
-                        <select id="sortFilter" class="filter-select">
-                            <option value="name">按名稱排序</option>
-                            <option value="downloads">按下載量排序</option>
-                            <option value="rating">按評分排序</option>
-                            <option value="updated">按更新時間排序</option>
+                            <option value="all">所有分類</option>
+                            <!-- 選項將由 JavaScript 動態載入 -->
                         </select>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 插件網格 -->
-        <section class="plugins-section">
+        <!-- 插件列表 -->
+        <section class="plugin-list-section">
             <div class="container">
-                <div class="plugins-grid" id="pluginsGrid">
-                    <!-- 插件卡片將由JavaScript動態載入 -->
-                </div>
-                <div class="loading" id="loading">
+                <div id="plugin-list-container" class="plugin-grid">
+                    <!-- 初始顯示載入中動畫 -->
                     <div class="loading-spinner"></div>
-                    <p>載入中...</p>
                 </div>
-                <div class="no-results" id="noResults" style="display: none;">
-                    <div class="no-results-icon">😔</div>
-                    <h3>沒有找到符合條件的作品</h3>
-                    <p>請嘗試調整搜尋條件或瀏覽其他分類</p>
-                </div>
+                 <p id="no-results-message" class="no-results" style="display: none;">此分類下沒有作品。</p>
             </div>
         </section>
     </main>
 
-    <!-- 頁腳 -->
+    <!-- 頁腳 (與您現有的相同) -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title">服務導覽</h3>
+                    <h3 class="footer-title">快速連結</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">首頁</a></li>
-                        <li><a href="about.html">專業服務</a></li>
-                        <li><a href="#contact">聯絡接案</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3 class="footer-title">專業平台</h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link">GitHub</a>
-                        <a href="#" class="social-link">Discord</a>
-                        <a href="#" class="social-link">作品集</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3 class="footer-title">客戶服務</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">需求評估</a></li>
-                        <li><a href="#">技術諮詢</a></li>
-                        <li><a href="#">報價詢問</a></li>
+                        <li><a href="plugins.html">作品集</a></li>
+                        <li><a href="about.html">關於我</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 專業 Minecraft 插件開發服務. 保留所有權利.</p>
+                <p>© 2025 npstudio 插件開發服務. 保留所有權利.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="js/plugin-detail.js"></script>
 </body>
-</html> 
+</html>

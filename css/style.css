@@ -1057,3 +1057,205 @@ body {
         justify-content: center;
     }
 } 
+/* ==========================================
+   作品集頁面樣式 (plugins.html)
+   ========================================== */
+
+.page-header {
+    background: var(--bg-secondary);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.plugin-filters {
+    padding: 1.5rem 2rem;
+    background: var(--bg-primary);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.filter-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.filter-select {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-color-alpha);
+}
+
+.plugin-list-section {
+    padding: 3rem 2rem;
+}
+
+/* 沿用 .featured-grid，但提供一個專屬的 class 以便未來擴展 */
+.plugin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* 作品集頁面的插件卡片樣式 - 為了與首頁的精選卡片區分 */
+/* 注意：這裡的 .plugin-card 樣式會與您首頁的卡片共用，
+   但我們在這裡進行微調，使其更適合列表頁面 */
+
+.plugin-list-section .plugin-card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.plugin-list-section .plugin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+/* 精選標籤 */
+.plugin-list-section .plugin-card.featured::before {
+    content: '★ 精選';
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(45deg);
+    transform-origin: center;
+    z-index: 2;
+}
+
+
+/* 卡片內部元素 */
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    height: 40px; /* 確保高度一致 */
+    line-height: 1;
+}
+
+.card-content {
+    flex-grow: 1; /* 讓內容區域填滿空間 */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.card-desc {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1; /* 讓描述填滿內容區域，使下方元素對齊 */
+}
+
+.card-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.card-category {
+    background: var(--primary-color-alpha);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.card-version {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.card-link {
+    display: block;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* 將按鈕推至卡片底部 */
+}
+
+.card-link:hover {
+    background: var(--primary-hover);
+}
+
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .filter-controls {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .page-header {
+        padding: 2rem 1rem;
+    }
+
+    .plugin-list-section {
+        padding: 2rem 1rem;
+    }
+}

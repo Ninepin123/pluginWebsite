@@ -416,7 +416,7 @@ class PluginDetailPage {
 }
 
 // ==========================================
-// 附加樣式
+// 附加樣式 (原始程式碼保留)
 // ==========================================
 
 const detailPageStyles = `
@@ -754,14 +754,115 @@ detailStyleElement.textContent = detailPageStyles;
 document.head.appendChild(detailStyleElement);
 
 // ==========================================
-// 初始化
+// 插件列表頁面功能 (新功能)
+// ==========================================
+
+class PluginListPage {
+    constructor() {
+        this.pluginsContainer = document.getElementById('plugin-list-container');
+        this.categoryFilter = document.getElementById('categoryFilter');
+        this.noResultsMessage = document.getElementById('no-results-message');
+        this.allPlugins = [];
+        this.allCategories = [];
+        this.init();
+    }
+
+    async init() {
+        if (!this.pluginsContainer || !this.categoryFilter) return;
+
+        await this.loadData();
+        this.populateCategoryFilter();
+        this.renderPlugins('all');
+        this.setupEventListeners();
+    }
+
+    async loadData() {
+        try {
+            const response = await fetch('data/plugins.json');
+            const data = await response.json();
+            this.allPlugins = data.plugins;
+            this.allCategories = data.categories;
+        } catch (error) {
+            console.error('Failed to load plugin data:', error);
+            if (this.pluginsContainer) {
+                this.pluginsContainer.innerHTML = '<p class="no-results">讀取作品失敗，請稍後再試。</p>';
+            }
+        }
+    }
+
+    populateCategoryFilter() {
+        this.allCategories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category.id;
+            option.textContent = category.name;
+            this.categoryFilter.appendChild(option);
+        });
+    }
+
+    renderPlugins(filterCategory) {
+        this.pluginsContainer.innerHTML = ''; // 清空現有內容
+
+        const filteredPlugins = (filterCategory === 'all')
+            ? this.allPlugins
+            : this.allPlugins.filter(plugin => plugin.category === filterCategory);
+
+        if (filteredPlugins.length === 0) {
+            this.noResultsMessage.style.display = 'block';
+        } else {
+            this.noResultsMessage.style.display = 'none';
+            filteredPlugins.forEach(plugin => {
+                const card = this.createPluginCard(plugin);
+                this.pluginsContainer.appendChild(card);
+            });
+        }
+    }
+
+    createPluginCard(plugin) {
+        const card = document.createElement('div');
+        card.className = 'plugin-card';
+        if (plugin.featured) {
+            card.classList.add('featured');
+        }
+
+        const categoryInfo = this.allCategories.find(cat => cat.id === plugin.category) || { name: plugin.category };
+
+        card.innerHTML = `
+            <div class="card-icon">${plugin.icon}</div>
+            <div class="card-content">
+                <h3 class="card-title">${plugin.name}</h3>
+                <p class="card-desc">${plugin.shortDescription}</p>
+                <div class="card-meta">
+                    <span class="card-category">${categoryInfo.name}</span>
+                    <span class="card-version">v${plugin.version}</span>
+                </div>
+            </div>
+            <a href="plugin-detail.html?id=${plugin.id}" class="card-link">查看詳情</a>
+        `;
+        return card;
+    }
+    
+    setupEventListeners() {
+        this.categoryFilter.addEventListener('change', (e) => {
+            this.renderPlugins(e.target.value);
+        });
+    }
+}
+
+
+// ==========================================
+// 初始化 (更新後的邏輯)
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('plugin-detail.html')) {
+    const pathname = window.location.pathname;
+
+    if (pathname.includes('plugin-detail.html')) {
         window.pluginDetailPage = new PluginDetailPage();
+    } 
+    else if (pathname.includes('plugins.html')) {
+        window.pluginListPage = new PluginListPage();
     }
 });
 
 // 導出類別
-window.PluginDetailPage = PluginDetailPage; 
+window.PluginDetailPage = PluginDetailPage;
