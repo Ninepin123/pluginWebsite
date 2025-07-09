@@ -1,0 +1,356 @@
+{
+  "plugins": [
+    {
+      "id": "economy-system",
+      "name": "EconomyPlus",
+      "shortDescription": "完整的經濟系統插件，展現複雜系統架構設計能力",
+      "description": "EconomyPlus 是一個展示企業級插件開發能力的作品，運用先進的架構設計模式，實現了複雜的金融系統邏輯。此專案展現了我在大型系統設計、資料庫優化、API設計等方面的專業技術能力。",
+      "category": "economy",
+      "version": "2.1.5",
+      "mcVersion": "1.20.x",
+      "downloads": 2854,
+      "rating": 4.8,
+      "fileSize": "1.2 MB",
+      "lastUpdate": "2024-01-15",
+      "icon": "💰",
+      "featured": true,
+      "githubUrl": "https://github.com/yourusername/economyplus",
+      "downloadUrl": "assets/downloads/EconomyPlus-v2.1.5.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "完整的虛擬貨幣系統",
+        "多種貨幣支援",
+        "銀行存款與貸款",
+        "商店系統",
+        "拍賣行功能",
+        "工作與薪資系統",
+        "經濟統計報告",
+        "多語言支援"
+      ],
+      "versions": [
+        {
+          "version": "2.1.5",
+          "date": "2024-01-15",
+          "changes": "修復銀行利息計算問題，新增貨幣轉換功能"
+        },
+        {
+          "version": "2.1.4",
+          "date": "2024-01-10",
+          "changes": "優化資料庫性能，新增商店模板"
+        },
+        {
+          "version": "2.1.3",
+          "date": "2024-01-05",
+          "changes": "修復拍賣行顯示問題"
+        }
+      ]
+    },
+    {
+      "id": "pvp-arena",
+      "name": "PvP Arena Pro",
+      "shortDescription": "專業的 PvP 競技場插件，展現高性能即時系統開發",
+      "description": "PvP Arena Pro 展示了高性能即時戰鬥系統的開發實力，運用了先進的事件驅動架構和優化的資料結構。此專案體現了我在即時系統設計、性能優化、複雜邏輯處理等方面的技術專長。",
+      "category": "pvp",
+      "version": "1.8.2",
+      "mcVersion": "1.20.x",
+      "downloads": 1567,
+      "rating": 4.6,
+      "fileSize": "890 KB",
+      "lastUpdate": "2024-01-12",
+      "icon": "⚔️",
+      "featured": true,
+      "githubUrl": "https://github.com/yourusername/pvparena",
+      "downloadUrl": "assets/downloads/PvPArenaPro-v1.8.2.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "多種競技場模式",
+        "即時排名系統",
+        "自動比賽配對",
+        "觀戰功能",
+        "獎勵與成就系統",
+        "競技場建構工具",
+        "統計數據追蹤",
+        "團隊管理"
+      ],
+      "versions": [
+        {
+          "version": "1.8.2",
+          "date": "2024-01-12",
+          "changes": "新增大逃殺模式，修復觀戰者權限問題"
+        },
+        {
+          "version": "1.8.1",
+          "date": "2024-01-08",
+          "changes": "優化配對算法，新增自訂競技場功能"
+        }
+      ]
+    },
+    {
+      "id": "chat-manager",
+      "name": "ChatManager",
+      "shortDescription": "功能強大的聊天管理插件，展現系統整合開發能力",
+      "description": "ChatManager 展示了複雜系統整合和模組化設計的開發能力，運用了設計模式和插件架構實現高度可擴展的功能。此專案體現了我在系統架構、權限管理、資料處理等技術領域的專業水準。",
+      "category": "utility",
+      "version": "3.2.1",
+      "mcVersion": "1.19.x",
+      "downloads": 3421,
+      "rating": 4.9,
+      "fileSize": "654 KB",
+      "lastUpdate": "2024-01-18",
+      "icon": "💬",
+      "featured": false,
+      "githubUrl": "https://github.com/yourusername/chatmanager",
+      "downloadUrl": "assets/downloads/ChatManager-v3.2.1.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "多頻道聊天系統",
+        "智能訊息過濾",
+        "自訂聊天格式",
+        "私人訊息系統",
+        "聊天記錄儲存",
+        "表情符號支援",
+        "權限整合",
+        "反垃圾訊息"
+      ],
+      "versions": [
+        {
+          "version": "3.2.1",
+          "date": "2024-01-18",
+          "changes": "新增表情符號功能，改善過濾器效能"
+        },
+        {
+          "version": "3.2.0",
+          "date": "2024-01-15",
+          "changes": "重大更新：新增頻道系統"
+        }
+      ]
+    },
+    {
+      "id": "teleport-system",
+      "name": "TeleportPlus",
+      "shortDescription": "便捷的傳送系統，支援家園、傳送點和隨機傳送",
+      "description": "TeleportPlus 提供完整的傳送解決方案，包括家園系統、公共傳送點、隨機傳送、傳送請求等功能。支援冷卻時間、費用設定和權限管理。",
+      "category": "utility",
+      "version": "2.5.3",
+      "mcVersion": "1.20.x",
+      "downloads": 2156,
+      "rating": 4.7,
+      "fileSize": "445 KB",
+      "lastUpdate": "2024-01-14",
+      "icon": "🌟",
+      "featured": true,
+      "githubUrl": "https://github.com/yourusername/teleportplus",
+      "downloadUrl": "assets/downloads/TeleportPlus-v2.5.3.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "多個家園設定",
+        "公共傳送點",
+        "隨機傳送功能",
+        "傳送請求系統",
+        "冷卻時間管理",
+        "傳送費用設定",
+        "安全檢查",
+        "GUI 介面"
+      ],
+      "versions": [
+        {
+          "version": "2.5.3",
+          "date": "2024-01-14",
+          "changes": "新增 GUI 介面，優化傳送安全檢查"
+        },
+        {
+          "version": "2.5.2",
+          "date": "2024-01-10",
+          "changes": "修復隨機傳送的安全問題"
+        }
+      ]
+    },
+    {
+      "id": "mini-games",
+      "name": "MiniGames Hub",
+      "shortDescription": "多合一小遊戲插件，包含多種有趣的迷你遊戲",
+      "description": "MiniGames Hub 是一個多合一的小遊戲平台，內建多種有趣的迷你遊戲如跑酷、尋寶、競速等。支援自訂遊戲模式和獎勵系統。",
+      "category": "fun",
+      "version": "1.4.7",
+      "mcVersion": "1.19.x",
+      "downloads": 1834,
+      "rating": 4.5,
+      "fileSize": "1.8 MB",
+      "lastUpdate": "2024-01-16",
+      "icon": "🎮",
+      "featured": false,
+      "githubUrl": "https://github.com/yourusername/minigames",
+      "downloadUrl": "assets/downloads/MiniGamesHub-v1.4.7.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "多種迷你遊戲",
+        "自動遊戲循環",
+        "玩家統計追蹤",
+        "獎勵系統",
+        "觀戰模式",
+        "遊戲大廳",
+        "自訂競技場",
+        "團隊支援"
+      ],
+      "versions": [
+        {
+          "version": "1.4.7",
+          "date": "2024-01-16",
+          "changes": "新增躲避球遊戲，修復統計問題"
+        },
+        {
+          "version": "1.4.6",
+          "date": "2024-01-12",
+          "changes": "優化遊戲大廳介面"
+        }
+      ]
+    },
+    {
+      "id": "world-guard-plus",
+      "name": "WorldGuard Plus",
+      "shortDescription": "進階世界保護插件，支援區域管理和權限控制",
+      "description": "WorldGuard Plus 是基於 WorldGuard 的進階版本，提供更強大的區域保護功能、細緻的權限控制和豐富的管理工具。",
+      "category": "admin",
+      "version": "4.1.2",
+      "mcVersion": "1.20.x",
+      "downloads": 987,
+      "rating": 4.3,
+      "fileSize": "756 KB",
+      "lastUpdate": "2024-01-11",
+      "icon": "🛡️",
+      "featured": false,
+      "githubUrl": "https://github.com/yourusername/worldguardplus",
+      "downloadUrl": "assets/downloads/WorldGuardPlus-v4.1.2.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "進階區域保護",
+        "細緻權限控制",
+        "區域標誌系統",
+        "動態邊界顯示",
+        "區域統計報告",
+        "批量管理工具",
+        "API 支援",
+        "MySQL 整合"
+      ],
+      "versions": [
+        {
+          "version": "4.1.2",
+          "date": "2024-01-11",
+          "changes": "新增動態邊界功能，修復記憶體洩漏"
+        },
+        {
+          "version": "4.1.1",
+          "date": "2024-01-07",
+          "changes": "優化區域查詢性能"
+        }
+      ]
+    },
+    {
+      "id": "auto-restart",
+      "name": "AutoRestart Pro",
+      "shortDescription": "智能伺服器重啟插件，支援定時重啟和效能監控",
+      "description": "AutoRestart Pro 提供智能的伺服器管理功能，包括定時重啟、效能監控、自動備份等。支援多種重啟條件和自訂通知。",
+      "category": "admin",
+      "version": "1.6.4",
+      "mcVersion": "1.18.x",
+      "downloads": 1245,
+      "rating": 4.4,
+      "fileSize": "312 KB",
+      "lastUpdate": "2024-01-09",
+      "icon": "🔄",
+      "featured": false,
+      "githubUrl": "https://github.com/yourusername/autorestart",
+      "downloadUrl": "assets/downloads/AutoRestartPro-v1.6.4.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "定時重啟功能",
+        "效能監控",
+        "自動備份",
+        "重啟前通知",
+        "條件式重啟",
+        "記憶體監控",
+        "TPS 追蹤",
+        "Discord 通知"
+      ],
+      "versions": [
+        {
+          "version": "1.6.4",
+          "date": "2024-01-09",
+          "changes": "新增 Discord 通知功能"
+        },
+        {
+          "version": "1.6.3",
+          "date": "2024-01-05",
+          "changes": "改善效能監控準確度"
+        }
+      ]
+    },
+    {
+      "id": "custom-items",
+      "name": "CustomItems",
+      "shortDescription": "自訂物品插件，創造獨特的遊戲道具和裝備",
+      "description": "CustomItems 允許您創建完全自訂的物品、武器和裝備。支援自訂材質、技能、屬性和特殊效果，為您的伺服器增添獨特性。",
+      "category": "utility",
+      "version": "2.3.8",
+      "mcVersion": "1.20.x",
+      "downloads": 2687,
+      "rating": 4.6,
+      "fileSize": "934 KB",
+      "lastUpdate": "2024-01-17",
+      "icon": "🗡️",
+      "featured": true,
+      "githubUrl": "https://github.com/yourusername/customitems",
+      "downloadUrl": "assets/downloads/CustomItems-v2.3.8.jar",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "features": [
+        "完全自訂物品",
+        "自訂材質支援",
+        "特殊技能系統",
+        "屬性修改器",
+        "合成配方編輯",
+        "物品等級系統",
+        "套裝效果",
+        "NBT 編輯器"
+      ],
+      "versions": [
+        {
+          "version": "2.3.8",
+          "date": "2024-01-17",
+          "changes": "新增套裝效果系統，優化材質載入"
+        },
+        {
+          "version": "2.3.7",
+          "date": "2024-01-13",
+          "changes": "修復物品複製問題"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "economy",
+      "name": "經濟系統",
+      "description": "貨幣、商店、交易相關插件"
+    },
+    {
+      "id": "pvp",
+      "name": "PVP",
+      "description": "戰鬥、競技場、對戰相關插件"
+    },
+    {
+      "id": "utility",
+      "name": "實用工具",
+      "description": "輔助功能和實用工具插件"
+    },
+    {
+      "id": "fun",
+      "name": "娛樂",
+      "description": "小遊戲和娛樂相關插件"
+    },
+    {
+      "id": "admin",
+      "name": "管理工具",
+      "description": "伺服器管理和維護插件"
+    }
+  ]
+} 

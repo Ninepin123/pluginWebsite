@@ -1,0 +1,680 @@
+/* ==========================================
+   插件詳情頁面樣式
+   ========================================== */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-hover);
+}
+
+/* ==========================================
+   插件標題區塊
+   ========================================== */
+
+.plugin-hero {
+    padding: 3rem 2rem;
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.plugin-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plugin-icon {
+    position: relative;
+}
+
+.plugin-icon img {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.plugin-icon:hover img {
+    transform: scale(1.05);
+}
+
+.plugin-info {
+    min-width: 0;
+}
+
+.plugin-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.plugin-short-desc {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.plugin-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.plugin-category,
+.plugin-version,
+.plugin-rating {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.plugin-category {
+    background: var(--primary-color-alpha);
+    color: var(--primary-color);
+}
+
+.plugin-version {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.plugin-rating {
+    background: var(--warning-color);
+    color: #333;
+}
+
+.plugin-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   插件內容區塊
+   ========================================== */
+
+.plugin-content {
+    padding: 3rem 2rem;
+    background: var(--bg-primary);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content-area {
+    min-width: 0;
+}
+
+.demo-section,
+.description-section,
+.features-section,
+.installation-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+/* ==========================================
+   影片容器
+   ========================================== */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================
+   插件描述
+   ========================================== */
+
+.plugin-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.plugin-description p {
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   功能特色
+   ========================================== */
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.features-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.feature-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   安裝步驟
+   ========================================== */
+
+.installation-steps {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.step {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 12px var(--primary-color-alpha);
+}
+
+.step-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   側邊欄
+   ========================================== */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card,
+.versions-card,
+.related-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover,
+.versions-card:hover,
+.related-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.info-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.info-value {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   版本歷史
+   ========================================== */
+
+.versions-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.version-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.version-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.version-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.version-number {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.version-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.version-changes {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    border-top: 1px solid var(--border-light);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   相關插件
+   ========================================== */
+
+.related-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.related-plugin {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.related-plugin:last-child {
+    margin-bottom: 0;
+}
+
+.related-plugin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.related-plugin-icon {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.related-plugin-info {
+    min-width: 0;
+}
+
+.related-plugin-name {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.related-plugin-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.related-plugin-meta {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.related-plugin-rating,
+.related-plugin-downloads {
+    background: var(--bg-tertiary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.related-plugin-link {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.related-plugin-link:hover {
+    background: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+.no-related {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* ==========================================
+   錯誤頁面
+   ========================================== */
+
+.not-found {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.not-found-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.not-found h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.not-found p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================
+   響應式設計
+   ========================================== */
+
+@media (max-width: 768px) {
+    .plugin-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .plugin-icon img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .plugin-name {
+        font-size: 2rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .plugin-actions {
+        justify-content: center;
+    }
+
+    .step {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .step-number {
+        margin: 0 auto;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .related-plugin {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .related-plugin-meta {
+        justify-content: center;
+    }
+
+    .plugin-meta {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .plugin-hero {
+        padding: 2rem 1rem;
+    }
+
+    .plugin-content {
+        padding: 2rem 1rem;
+    }
+
+    .plugin-name {
+        font-size: 1.8rem;
+    }
+
+    .plugin-short-desc {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .step {
+        padding: 1.5rem;
+    }
+
+    .info-card,
+    .versions-card,
+    .related-card {
+        padding: 1rem;
+    }
+}
+
+/* ==========================================
+   滾動條樣式
+   ========================================== */
+
+.versions-list::-webkit-scrollbar,
+.related-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.versions-list::-webkit-scrollbar-track,
+.related-list::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 3px;
+}
+
+.versions-list::-webkit-scrollbar-thumb,
+.related-list::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.versions-list::-webkit-scrollbar-thumb:hover,
+.related-list::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ==========================================
+   動畫效果
+   ========================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plugin-header,
+.main-content-area > *,
+.sidebar > * {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.plugin-header {
+    animation-delay: 0.1s;
+}
+
+.demo-section {
+    animation-delay: 0.2s;
+}
+
+.description-section {
+    animation-delay: 0.3s;
+}
+
+.features-section {
+    animation-delay: 0.4s;
+}
+
+.installation-section {
+    animation-delay: 0.5s;
+}
+
+.info-card {
+    animation-delay: 0.6s;
+}
+
+.versions-card {
+    animation-delay: 0.7s;
+}
+
+.related-card {
+    animation-delay: 0.8s;
+} 

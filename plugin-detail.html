@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pluginTitle">專案詳情 - 專業 Minecraft 插件開發</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/icons/minecraft-block.svg" alt="Logo" class="nav-logo">
+                <span class="nav-title">專業開發</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a href="plugins.html" class="nav-link">作品集</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">專業服務</a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <!-- 返回按鈕 -->
+        <div class="container">
+            <a href="plugins.html" class="back-link">← 返回作品集</a>
+        </div>
+
+        <!-- 插件標題區塊 -->
+        <section class="plugin-hero">
+            <div class="container">
+                <div class="plugin-header">
+                    <div class="plugin-icon">
+                        <img id="pluginIcon" src="assets/images/plugins/default.png" alt="插件圖示">
+                    </div>
+                    <div class="plugin-info">
+                        <h1 id="pluginName" class="plugin-name">插件名稱</h1>
+                        <p id="pluginShortDesc" class="plugin-short-desc">插件簡短描述</p>
+                        <div class="plugin-meta">
+                            <span id="pluginCategory" class="plugin-category">分類</span>
+                            <span id="pluginVersion" class="plugin-version">版本</span>
+                            <span id="pluginRating" class="plugin-rating">⭐ 評分</span>
+                        </div>
+                        <div class="plugin-actions">
+                            <a href="about.html#contact" class="btn btn-primary">
+                                <span class="btn-icon">💬</span>
+                                討論需求
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 插件內容區塊 -->
+        <section class="plugin-content">
+            <div class="container">
+                <div class="content-grid">
+                    <!-- 主要內容 -->
+                    <div class="main-content-area">
+                        <!-- Demo 影片 -->
+                        <div class="demo-section">
+                            <h2 class="section-title">功能展示</h2>
+                            <div class="video-container">
+                                <iframe id="demoVideo" 
+                                    src="" 
+                                    frameborder="0" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <!-- 詳細描述 -->
+                        <div class="description-section">
+                            <h2 class="section-title">專案說明</h2>
+                            <div id="pluginDescription" class="plugin-description">
+                                <!-- 將由JavaScript動態載入 -->
+                            </div>
+                        </div>
+
+                        <!-- 技術特色 -->
+                        <div class="features-section">
+                            <h2 class="section-title">技術特色</h2>
+                            <ul id="pluginFeatures" class="features-list">
+                                <!-- 將由JavaScript動態載入 -->
+                            </ul>
+                        </div>
+
+                        <!-- 開發流程 -->
+                        <div class="installation-section">
+                            <h2 class="section-title">開發流程</h2>
+                            <div class="installation-steps">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h3>需求分析</h3>
+                                        <p>深入了解客戶需求，制定詳細的功能規劃和技術方案</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h3>架構設計</h3>
+                                        <p>設計優化的程式架構，確保插件的擴展性和維護性</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h3>功能實現</h3>
+                                        <p>運用先進的開發技術，實現所有核心功能和細節優化</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h3>測試交付</h3>
+                                        <p>嚴格的測試驗證，確保品質後交付並提供技術支援</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 側邊欄 -->
+                    <div class="sidebar">
+                        <!-- 專案資訊 -->
+                        <div class="info-card">
+                            <h3 class="card-title">專案資訊</h3>
+                            <div class="info-item">
+                                <span class="info-label">開發版本：</span>
+                                <span id="sidebarVersion" class="info-value">v1.0.0</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">適用版本：</span>
+                                <span id="sidebarMcVersion" class="info-value">1.20.x</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">專案評分：</span>
+                                <span id="sidebarRating" class="info-value">⭐ 4.8</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">開發週期：</span>
+                                <span id="sidebarDevelopmentTime" class="info-value">2-3 週</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">最後更新：</span>
+                                <span id="sidebarLastUpdate" class="info-value">2024-01-15</span>
+                            </div>
+                        </div>
+
+                        <!-- 開發歷程 -->
+                        <div class="versions-card">
+                            <h3 class="card-title">開發歷程</h3>
+                            <div id="versionHistory" class="versions-list">
+                                <!-- 將由JavaScript動態載入 -->
+                            </div>
+                        </div>
+
+                        <!-- 相關作品 -->
+                        <div class="related-card">
+                            <h3 class="card-title">相關作品</h3>
+                            <div id="relatedPlugins" class="related-list">
+                                <!-- 將由JavaScript動態載入 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">快速連結</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="plugins.html">插件列表</a></li>
+                        <li><a href="about.html">關於我</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">社群媒體</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">支援</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">技術支援</a></li>
+                        <li><a href="#">問題回報</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Minecraft 插件展示. 保留所有權利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/plugin-detail.js"></script>
+</body>
+</html> 

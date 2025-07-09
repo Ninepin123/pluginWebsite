@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我 - Minecraft 插件開發專家</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="icon" href="assets/icons/favicon.ico">
+    <style>
+        /* 強調聯絡方式的樣式 */
+        .contact-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .contact-cta {
+            background: #ff6b6b;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        
+        .primary-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .primary-contact-btn {
+            background: white;
+            color: #ff6b6b;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .primary-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .contact-info {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            background: #4ecdc4;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            background: #45b7aa;
+        }
+        
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .availability-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #4caf50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .response-time {
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .primary-contacts {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .floating-contact {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/icons/minecraft-block.svg" alt="Logo" class="nav-logo">
+                <span class="nav-title">專業開發</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a href="plugins.html" class="nav-link">作品集</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link active">聯絡我</a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <!-- 聯絡我標題區塊 -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-header">
+                    <div class="contact-avatar">
+                        <img src="assets/images/avatar.png" alt="開發者頭像" class="avatar-img">
+                        <div class="avatar-decoration">
+                            <div class="minecraft-frame"></div>
+                        </div>
+                    </div>
+                    <div class="contact-intro">
+                        <h1 class="contact-name">聲音大師</h1>
+                        <p class="contact-title">專業 Minecraft 插件開發師</p>
+                        <div class="availability-status">
+                            <div class="status-indicator"></div>
+                            目前接案中
+                        </div>
+                        <p class="contact-description">
+                            🎯 專注於客製化插件開發，從簡單指令到複雜系統<br>
+                            💬 提供直接溝通，省去中間環節的困擾<br>
+                            🔧 價格實惠，進度透明，免費後續維護<br>
+                            <span class="response-time">⚡ 通常在 2 小時內回覆</span>
+                        </p>
+                        <div class="contact-badges">
+                            <span class="badge">✅ 回覆快速</span>
+                            <span class="badge">✅ 價格實惠</span>
+                            <span class="badge">✅ 品質保證</span>
+                            <span class="badge">✅ 免費維護</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要聯絡方式 CTA -->
+        <section class="contact-cta">
+            <div class="container">
+                <h2>立即開始您的專案</h2>
+                <p>選擇最適合您的聯絡方式，我會盡快回覆您的需求</p>
+                <div class="primary-contacts">
+                    <a href="mailto:business@example.com?subject=插件開發詢問" class="primary-contact-btn">
+                        📧 發送郵件
+                    </a>
+                    <a href="https://discord.gg/yourserver" class="primary-contact-btn" target="_blank">
+                        💬 Discord 即時諮詢
+                    </a>
+                    <a href="https://line.me/ti/p/yourlineid" class="primary-contact-btn" target="_blank">
+                        📱 Line 聯絡
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 詳細聯絡方式 -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">多元聯絡方式</h2>
+                <p class="section-subtitle">選擇您偏好的溝通方式，我都能快速回應</p>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3 class="contact-title">專業郵件</h3>
+                        <p class="contact-info">business@example.com</p>
+                        <p class="response-time">回覆時間：2-6 小時</p>
+                        <a href="mailto:business@example.com?subject=插件開發詢問&body=您好，我想了解插件開發服務..." class="contact-link">立即發送</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💬</div>
+                        <h3 class="contact-title">Discord 即時</h3>
+                        <p class="contact-info">聲音大師#1234</p>
+                        <p class="response-time">回覆時間：即時-2 小時</p>
+                        <a href="https://discord.gg/yourserver" class="contact-link" target="_blank">加入 Discord</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3 class="contact-title">Line 聯絡</h3>
+                        <p class="contact-info">ID: minecraft_dev</p>
+                        <p class="response-time">回覆時間：1-4 小時</p>
+                        <a href="https://line.me/ti/p/yourlineid" class="contact-link" target="_blank">加入好友</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📋</div>
+                        <h3 class="contact-title">需求表單</h3>
+                        <p class="contact-info">詳細專案評估</p>
+                        <p class="response-time">回覆時間：4-12 小時</p>
+                        <a href="https://forms.gle/yourform" class="contact-link" target="_blank">填寫表單</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💻</div>
+                        <h3 class="contact-title">GitHub</h3>
+                        <p class="contact-info">查看開源作品</p>
+                        <p class="response-time">技術討論平台</p>
+                        <a href="https://github.com/yourusername" class="contact-link" target="_blank">查看代碼</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🎥</div>
+                        <h3 class="contact-title">視訊會議</h3>
+                        <p class="contact-info">深度需求討論</p>
+                        <p class="response-time">預約制服務</p>
+                        <a href="https://calendly.com/yourname" class="contact-link" target="_blank">預約會議</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能和專長 -->
+        <section class="skills">
+            <div class="container">
+                <h2 class="section-title">技能與專長</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">☕</div>
+                        <h3 class="skill-name">Java</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚙️</div>
+                        <h3 class="skill-name">Bukkit/Spigot API</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🗄️</div>
+                        <h3 class="skill-name">MySQL/SQLite</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🌐</div>
+                        <h3 class="skill-name">Web 開發</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 開發歷程 -->
+        <section class="timeline">
+            <div class="container">
+                <h2 class="section-title">開發歷程</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">接案服務擴展</h3>
+                            <p class="timeline-description">專注於企業級插件開發，為大型伺服器提供定制化解決方案</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">技術架構升級</h3>
+                            <p class="timeline-description">建立標準化開發流程，提升代碼品質和項目交付效率</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">專業服務起步</h3>
+                            <p class="timeline-description">開始提供插件開發服務，累積豐富的客戶合作經驗</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">技術基礎建立</h3>
+                            <p class="timeline-description">深入學習 Java 開發和 Minecraft 插件 API，建立技術基礎</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">聯絡資訊</h3>
+                    <ul class="footer-links">
+                        <li>📧 business@example.com</li>
+                        <li>💬 Discord: 聲音大師#1234</li>
+                        <li>📱 Line: minecraft_dev</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">快速連結</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="plugins.html">插件列表</a></li>
+                        <li><a href="#contact">聯絡方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">支援</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">技術支援</a></li>
+                        <li><a href="#">問題回報</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Minecraft 插件展示. 保留所有權利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 浮動聯絡按鈕 -->
+    <a href="mailto:business@example.com?subject=插件開發詢問" class="floating-contact">
+        💬 立即聯絡
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
