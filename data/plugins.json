@@ -1,13 +1,13 @@
 {
   "plugins": [
     {
-      "id": "economy-system",
-      "name": "EconomyPlus",
-      "shortDescription": "完整的經濟系統插件，展現複雜系統架構設計能力",
-      "description": "EconomyPlus 是一個展示企業級插件開發能力的作品，運用先進的架構設計模式，實現了複雜的金融系統邏輯。此專案展現了我在大型系統設計、資料庫優化、API設計等方面的專業技術能力。",
-      "category": "economy",
-      "version": "2.1.5",
-      "mcVersion": "1.20.x",
+      "id": "DungeonSystem",
+      "name": "DungeonSystem",
+      "shortDescription": "完整的副本系統，簡單設定，一看就上手",
+      "description": "DungeonSystem",
+      "category": "dungeon",
+      "version": "1.0.0",
+      "mcVersion": "1.20.6 1.21.4",
       "downloads": 2854,
       "rating": 4.8,
       "fileSize": "1.2 MB",
