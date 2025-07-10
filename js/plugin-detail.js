@@ -79,7 +79,13 @@ class PluginDetailPage {
         // 更新插件圖示
         const iconElement = document.getElementById('pluginIcon');
         if (iconElement) {
-            iconElement.innerHTML = `<div style="font-size: 4rem;">${this.plugin.icon}</div>`;
+            if (this.plugin.iconImage) {
+                iconElement.src = this.plugin.iconImage;
+                iconElement.alt = this.plugin.name + ' 圖示';
+                iconElement.style.display = 'block';
+            } else {
+                iconElement.innerHTML = `<div style="font-size: 4rem;">${this.plugin.icon}</div>`;
+            }
         }
 
         // 更新插件名稱

@@ -176,7 +176,12 @@ class PluginManager {
         return `
             <div class="plugin-card" data-plugin-id="${plugin.id}">
                 <div class="plugin-card-header">
-                    <div class="plugin-card-icon">${plugin.icon}</div>
+                    <div class="plugin-card-icon">
+                        ${plugin.iconImage ? 
+                            `<img src="${plugin.iconImage}" alt="${plugin.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">` : 
+                            plugin.icon
+                        }
+                    </div>
                 </div>
                 <div class="plugin-card-body">
                     <h3 class="plugin-card-title">${plugin.name}</h3>
@@ -334,7 +339,12 @@ class HomePageLoader {
         featuredGrid.innerHTML = plugins.map(plugin => `
             <div class="plugin-card">
                 <div class="plugin-card-header">
-                    <div class="plugin-card-icon">${plugin.icon}</div>
+                    <div class="plugin-card-icon">
+                        ${plugin.iconImage ? 
+                            `<img src="${plugin.iconImage}" alt="${plugin.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">` : 
+                            plugin.icon
+                        }
+                    </div>
                 </div>
                 <div class="plugin-card-body">
                     <h3 class="plugin-card-title">${plugin.name}</h3>
