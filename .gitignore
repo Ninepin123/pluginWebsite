@@ -60,3 +60,27 @@ coverage/
 .md
 
 requirements.txt
+# Local development files
+run_server.bat
+run_server.sh
+requirements.txt
+app.py
+vercel.json
+netlify.toml
+本地測試說明.md
+*.bat
+*.sh
+
+# Python related
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Local server configs
+.flask
+.pytest_cache/
