@@ -20,6 +20,7 @@ class PluginManager {
         await this.loadPluginData();
         this.setupEventListeners();
         this.renderPlugins();
+        this.renderCategoryOptions();
         this.hideLoading();
     }
 
@@ -147,7 +148,21 @@ class PluginManager {
     // ==========================================
     // 渲染功能
     // ==========================================
+    renderCategoryOptions() {
+        const categoryFilter = document.getElementById('categoryFilter');
+        if (!categoryFilter || !this.categories) return;
 
+        // 清空現有選項（保留"所有分類"）
+        categoryFilter.innerHTML = '<option value="">所有分類</option>';
+        
+        // 添加從 JSON 載入的分類
+        this.categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category.id;
+            option.textContent = category.name;
+            categoryFilter.appendChild(option);
+        });
+    }
     renderPlugins() {
         const pluginsGrid = document.getElementById('pluginsGrid');
         const noResults = document.getElementById('noResults');

@@ -39,6 +39,85 @@
           "changes": "初版製作完成"
         }
       ]
+    },
+    {
+      "id": "MailBox",
+      "name": "信箱系統",
+      "shortDescription": "簡單好用的信箱系統",
+      "description": "想要發送獎勵給玩家卻又怕有玩家沒上線無法領取?不想要拿著物品一個一個打指令發送給玩家?那我們就是你要的選擇",
+      "category": "utility",
+      "version": "1.0.0",
+      "mcVersion": "1.20.6 - 1.21.4",
+      "lastUpdate": "2025-05-03",
+      "icon": "💰",
+      "iconImage": "assets/images/plugins/mailbox.png",
+      "featured": true,
+      "demoVideo": "https://www.youtube.com/embed/mxuXVx01KOk?si=RhO2gBc1AWVJ3hhL",
+      "features": [
+        "不需要額外設定，安裝即可使用",
+        "支援MySQL",
+        "完整的API可以調用",
+        "支援線下玩家物品發送"
+      ],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2025-03-05",
+          "changes": "初版製作完成"
+        }
+      ]
+    },
+    {
+      "id": "playerPointBot",
+      "name": "點數機器人",
+      "shortDescription": "透過DC給予玩家贊助點數",
+      "description": "依賴discord SRV，新增功能來讓你可以在DC就給予玩家贊助點數，用手機也能即時處理贊助需求",
+      "category": "discord",
+      "version": "1.0.0",
+      "mcVersion": "1.20.6 - 1.21.4",
+      "lastUpdate": "2025-04-02",
+      "icon": "💰",
+      "iconImage": "assets/images/plugins/pointBot.png",
+      "featured": true,
+      "demoVideo": "https://www.youtube.com/embed/RGnQizQIJoQ?si=MzyJNo_itekqMK2B",
+      "features": [
+        "不需要額外設定，安裝即可使用",
+        "config檔案調整顯示文字",
+        "記錄點數操作，誰給了多少點一目了然"
+      ],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-02",
+          "changes": "初版製作完成"
+        }
+      ]
+    },
+    {
+      "id": "tomestone",
+      "name": "墓碑插件",
+      "shortDescription": "玩家死亡後，在原地產生墓碑",
+      "description": "想要生存噴裝，但怕被清理物品插件清掉嗎？那你一定要看看這個",
+      "category": "utility",
+      "version": "1.0.0",
+      "mcVersion": "1.20.6 - 1.21.4",
+      "lastUpdate": "2025-03-01",
+      "icon": "💰",
+      "iconImage": "assets/images/plugins/tombstone.png",
+      "featured": true,
+      "demoVideo": "https://www.youtube.com/embed/Q5z52AYFRuA?si=mqteEj1sc2J8bbc7",
+      "features": [
+        "不需要額外設定，安裝即可使用",
+        "提供額外指令來讓玩家可以遠端獲取墓碑內物品",
+        "自己只能開自己的墓碑，有效避免糾紛"
+      ],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2025-03-02",
+          "changes": "初版製作完成"
+        }
+      ]
     }
   ],
   "categories": [
