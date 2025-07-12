@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DungeonSystem - 專業副本系統插件</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/plugin-detail.css">
+    <link rel="icon" href="assets/icons/favicon.ico">
+    <style>
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-section {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .feature-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .command-table th,
+        .command-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .command-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .command-table td:first-child {
+            font-family: 'Courier New', monospace;
+            background: var(--bg-tertiary);
+            font-weight: 500;
+        }
+        
+        .config-block {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .requirement-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--warning-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.25rem;
+        }
+        
+        .optional-badge {
+            background: var(--success-color);
+        }
+        
+        .toc {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.25rem 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .toc a:hover {
+            background: var(--primary-color-alpha);
+            padding-left: 1rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/icons/minecraft-block.svg" alt="Logo" class="nav-logo">
+                <span class="nav-title">專業開發</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a href="plugins.html" class="nav-link">作品集</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">專業服務</a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <!-- 返回按鈕 -->
+        <div class="container">
+            <a href="plugins.html" class="back-link">← 返回作品集</a>
+        </div>
+
+        <!-- 插件標題區塊 -->
+        <section class="plugin-hero">
+            <div class="container">
+                <div class="plugin-header">
+                    <div class="plugin-icon">
+                        <div style="font-size: 4rem;">🏰</div>
+                    </div>
+                    <div class="plugin-info">
+                        <h1 class="plugin-name">DungeonSystem</h1>
+                        <p class="plugin-short-desc">完整的副本系統插件，支援組隊、波次戰鬥和復活機制</p>
+                        <div class="plugin-meta">
+                            <span class="plugin-category">管理工具</span>
+                            <span class="plugin-version">v1.0.0</span>
+                            <span class="plugin-rating">⭐ 5.0</span>
+                        </div>
+                        <div class="plugin-actions">
+                            <a href="about.html#contact" class="btn btn-primary">
+                                <span class="btn-icon">💬</span>
+                                討論需求
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 插件內容區塊 -->
+        <section class="plugin-content">
+            <div class="container">
+                <div class="content-grid">
+                    <!-- 主要內容 -->
+                    <div class="main-content-area">
+                        
+                        <!-- 目錄 -->
+                        <div class="toc">
+                            <h3>📋 內容目錄</h3>
+                            <ul>
+                                <li><a href="#intro">插件簡介</a></li>
+                                <li><a href="#requirements">安裝要求</a></li>
+                                <li><a href="#features">功能介紹</a></li>
+                                <li><a href="#commands">指令大全</a></li>
+                                <li><a href="#permissions">權限設置</a></li>
+                                <li><a href="#config">配置示例</a></li>
+                                <li><a href="#faq">常見問題</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- 插件簡介 -->
+                        <div class="description-section" id="intro">
+                            <h2 class="section-title">🎮 插件簡介</h2>
+                            <div class="plugin-description">
+                                <p>DungeonSystem 是一個功能完整的 Minecraft 副本系統插件，為伺服器提供豐富的 PvE 內容體驗。</p>
+                                
+                                <div class="feature-grid">
+                                    <div class="feature-section">
+                                        <h4>🏛️ 副本系統</h4>
+                                        <ul>
+                                            <li>普通副本：擊殺指定目標怪物完成</li>
+                                            <li>波次副本：分波次清理怪物</li>
+                                            <li>支援等級要求和人數限制</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>👥 組隊系統</h4>
+                                        <ul>
+                                            <li>自定義組隊功能</li>
+                                            <li>MMOCore 整合支援</li>
+                                            <li>隊伍聊天和管理</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>🎫 入場券系統</h4>
+                                        <ul>
+                                            <li>右鍵點擊入場券進入副本</li>
+                                            <li>只有隊長能使用入場券</li>
+                                            <li>自動檢查隊伍條件</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>💖 復活系統</h4>
+                                        <ul>
+                                            <li>普通復活裝置（需等待10秒）</li>
+                                            <li>高級復活裝置（立即復活）</li>
+                                            <li>隊友復活機制</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 安裝要求 -->
+                        <div class="installation-section" id="requirements">
+                            <h2 class="section-title">📦 安裝要求</h2>
+                            <div class="installation-steps">
+                                
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h3>核心要求</h3>
+                                        <p><strong>Minecraft 版本：</strong>1.16+</p>
+                                        <div style="margin-top: 1rem;">
+                                            <span class="requirement-badge">MythicMobs</span>
+                                            <span class="requirement-badge">DecentHolograms</span>
+                                            <span class="requirement-badge">PlaceholderAPI</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h3>可選依賴</h3>
+                                        <div>
+                                            <span class="requirement-badge optional-badge">MMOCore</span>
+                                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                                                整合組隊系統（可選）
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h3>安裝步驟</h3>
+                                        <ol>
+                                            <li>將插件 JAR 文件放入 plugins 資料夾</li>
+                                            <li>重啟伺服器</li>
+                                            <li>編輯生成的配置文件</li>
+                                            <li>使用 <code>/dungeon reload</code> 重載配置</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 功能特色 -->
+                        <div class="features-section" id="features">
+                            <h2 class="section-title">🎯 詳細功能</h2>
+                            
+                            <h3>副本類型</h3>
+                            <div class="feature-grid">
+                                <div class="feature-section">
+                                    <h4>普通副本</h4>
+                                    <ul>
+                                        <li>擊殺指定目標怪物完成</li>
+                                        <li>支援多種怪物配置</li>
+                                        <li>可設置等級要求和人數限制</li>
+                                        <li>自動怪物縮放系統</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-section">
+                                    <h4>波次副本</h4>
+                                    <ul>
+                                        <li>分波次清理怪物</li>
+                                        <li>支援強制下一波倒數</li>
+                                        <li>每波可配置不同怪物</li>
+                                        <li>音效與視覺反饋</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <h3>組隊系統</h3>
+                            <div class="config-block">
+/party create       - 創建隊伍
+/party invite &lt;玩家&gt; - 邀請玩家
+/party accept       - 接受邀請
+/party leave        - 離開隊伍
+/party info         - 查看隊伍信息
+                            </div>
+                            
+                            <h3>排行榜系統</h3>
+                            <ul class="features-list">
+                                <li><span class="feature-icon">📊</span>臨時排行榜：在玩家上方顯示30秒</li>
+                                <li><span class="feature-icon">🏆</span>永久排行榜：DecentHolograms 全息圖顯示</li>
+                                <li><span class="feature-icon">📈</span>詳細統計：完成次數、最佳時間、擊殺數</li>
+                                <li><span class="feature-icon">🔄</span>自動更新：實時更新排名數據</li>
+                            </ul>
+                        </div>
+
+                        <!-- 指令大全 -->
+                        <div class="commands-section" id="commands">
+                            <h2 class="section-title">📝 指令大全</h2>
+                            
+                            <h3>玩家指令</h3>
+                            <table class="command-table">
+                                <thead>
+                                    <tr>
+                                        <th>指令</th>
+                                        <th>權限</th>
+                                        <th>描述</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>/dungeon</td>
+                                        <td>-</td>
+                                        <td>顯示幫助信息</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/dungeon join &lt;副本名稱&gt;</td>
+                                        <td>dungeon.join</td>
+                                        <td>加入副本</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/dungeon list</td>
+                                        <td>-</td>
+                                        <td>列出可用副本</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/dungeon leave</td>
+                                        <td>-</td>
+                                        <td>離開副本</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/dungeon rank &lt;副本名稱&gt;</td>
+                                        <td>-</td>
+                                        <td>顯示排行榜</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3>管理員指令</h3>
+                            <table class="command-table">
+                                <thead>
+                                    <tr>
+                                        <th>指令</th>
+                                        <th>權限</th>
+                                        <th>描述</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>/dungeon reload</td>
+                                        <td>dungeonsystem.admin</td>
+                                        <td>重載配置</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/dungeon key &lt;副本ID&gt; [數量]</td>
+                                        <td>dungeonsystem.admin</td>
+                                        <td>生成入場券</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/dungeon revive &lt;類型&gt; [數量]</td>
+                                        <td>dungeonsystem.admin</td>
+                                        <td>生成復活道具</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/dungeon mob &lt;參數&gt;</td>
+                                        <td>dungeonsystem.admin</td>
+                                        <td>添加怪物到副本</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 權限設置 -->
+                        <div class="permissions-section" id="permissions">
+                            <h2 class="section-title">🔑 權限設置</h2>
+                            
+                            <h3>基礎權限</h3>
+                            <div class="config-block">
+permissions:
+  dungeonsystem.admin:
+    description: 管理員權限
+    default: op
+    
+  dungeon.join:
+    description: 進入副本權限
+    default: false
+    
+  dungeonsystem.key.副本ID:
+    description: 獲取特定副本入場券權限
+    default: false
+                            </div>
+                            
+                            <h3>權限組配置範例</h3>
+                            <div class="config-block">
+groups:
+  player:
+    permissions:
+    - dungeon.join
+    - dungeonsystem.key.dungeon1
+    
+  vip:
+    permissions:
+    - dungeon.join
+    - dungeonsystem.key.*
+    
+  admin:
+    permissions:
+    - dungeonsystem.admin
+                            </div>
+                        </div>
+
+                        <!-- 配置示例 -->
+                        <div class="config-section" id="config">
+                            <h2 class="section-title">⚙️ 配置示例</h2>
+                            
+                            <h3>基本設置 (config.yml)</h3>
+                            <div class="config-block">
+settings:
+  exit-point: "world,0,64,0,0,0"  # 副本退出點
+  revival-system-enabled: true    # 復活系統開關
+
+key-settings:
+  cooldown-seconds: 2  # 鑰匙使用冷卻時間
+
+party:
+  system-type: "custom"  # 組隊系統類型 custom/mmocore
+                            </div>
+                            
+                            <h3>普通副本配置</h3>
+                            <div class="config-block">
+dungeons:
+  dungeon_normal_1:
+    type: "normal"
+    level-required: 0
+    max-players: 4
+    display-name: "§e簡單副本"
+    spawn-point: "world,100,64,100,0,0"
+    death-waiting-area: "world,110,64,110,0,0"
+    target-mob: "boss_goblin_king"
+    mobs:
+      - id: "dungeon_goblin"
+        location: "world,120,64,120,0,0"
+        amount: 3
+        radius: 5.0
+        level: 1
+        type: NORMAL
+                            </div>
+                            
+                            <h3>波次副本配置</h3>
+                            <div class="config-block">
+  dungeon_wave_1:
+    type: "wave"
+    level-required: 10
+    max-players: 5
+    display-name: "§b挑戰之塔"
+    spawn-point: "world,200,64,200,0,0"
+    death-waiting-area: "world,210,64,210,0,0"
+    waves:
+      total: 3
+      wave-1:
+        - id: "dungeon_skeleton"
+          location: "world,220,64,220,0,0"
+          amount: 5
+          radius: 3.0
+          level: 2
+          type: NORMAL
+                            </div>
+                        </div>
+
+                        <!-- 常見問題 -->
+                        <div class="faq-section" id="faq">
+                            <h2 class="section-title">❗ 常見問題</h2>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-section">
+                                    <h4>Q: 玩家無法進入副本？</h4>
+                                    <p><strong>A:</strong> 檢查以下項目：</p>
+                                    <ul>
+                                        <li>玩家是否在隊伍中且為隊長</li>
+                                        <li>玩家等級是否達到要求</li>
+                                        <li>副本是否被其他隊伍占用</li>
+                                        <li>是否有正確的權限</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-section">
+                                    <h4>Q: 怪物沒有生成？</h4>
+                                    <p><strong>A:</strong> 確認：</p>
+                                    <ul>
+                                        <li>MythicMobs 怪物ID 是否正確</li>
+                                        <li>生成位置是否有效</li>
+                                        <li>世界是否存在</li>
+                                        <li>檢查控制台錯誤信息</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-section">
+                                    <h4>Q: 排行榜不顯示？</h4>
+                                    <p><strong>A:</strong> 檢查：</p>
+                                    <ul>
+                                        <li>DecentHolograms 是否正常運作</li>
+                                        <li>PlaceholderAPI 是否安裝</li>
+                                        <li>副本ID 是否正確</li>
+                                        <li>是否有完成記錄</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-section">
+                                    <h4>Q: 組隊系統無法使用？</h4>
+                                    <p><strong>A:</strong> 確認：</p>
+                                    <ul>
+                                        <li>組隊系統類型設置是否正確</li>
+                                        <li>如使用 MMOCore，確保插件已安裝</li>
+                                        <li>檢查相關權限設置</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--primary-color-alpha); border-radius: 8px;">
+                                <h4>💡 性能優化建議</h4>
+                                <ul>
+                                    <li>定期清理無用的全息圖</li>
+                                    <li>適當設置怪物數量</li>
+                                    <li>調整更新間隔時間</li>
+                                    <li>監控記憶體使用量</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 側邊欄 -->
+                    <div class="sidebar">
+                        <!-- 專案資訊 -->
+                        <div class="info-card">
+                            <h3 class="card-title">專案資訊</h3>
+                            <div class="info-item">
+                                <span class="info-label">開發版本：</span>
+                                <span class="info-value">v1.0.0</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">適用版本：</span>
+                                <span class="info-value">1.16+</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">專案評分：</span>
+                                <span class="info-value">⭐ 5.0</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">開發週期：</span>
+                                <span class="info-value">4-6 週</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">最後更新：</span>
+                                <span class="info-value">2024-01-20</span>
+                            </div>
+                        </div>
+
+                        <!-- 技術特點 -->
+                        <div class="versions-card">
+                            <h3 class="card-title">技術特點</h3>
+                            <div class="versions-list">
+                                <div class="version-item">
+                                    <div class="version-header">
+                                        <span class="version-number">🏗️ 架構設計</span>
+                                    </div>
+                                    <div class="version-changes">模組化設計，支援多種副本類型擴展</div>
+                                </div>
+                                <div class="version-item">
+                                    <div class="version-header">
+                                        <span class="version-number">⚡ 性能優化</span>
+                                    </div>
+                                    <div class="version-changes">異步處理，避免主線程阻塞</div>
+                                </div>
+                                <div class="version-item">
+                                    <div class="version-header">
+                                        <span class="version-number">🔧 API 整合</span>
+                                    </div>
+                                    <div class="version-changes">支援多種插件 API，擴展性強</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PlaceholderAPI 變數 -->
+                        <div class="related-card">
+                            <h3 class="card-title">PlaceholderAPI 變數</h3>
+                            <div class="related-list">
+                                <div class="config-block" style="font-size: 0.8rem;">
+%dungeonrank_副本ID_rank%
+# 玩家在該副本的排名
+
+%dungeonrank_副本ID_count%
+# 玩家完成該副本的次數
+
+%dungeonrank_副本ID_info%
+# 玩家的完整信息
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">快速連結</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="plugins.html">插件列表</a></li>
+                        <li><a href="about.html">關於我</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">社群媒體</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">支援</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">技術支援</a></li>
+                        <li><a href="#">問題回報</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Minecraft 插件展示. 保留所有權利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
