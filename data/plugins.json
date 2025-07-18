@@ -123,6 +123,32 @@
           "changes": "初版製作完成"
         }
       ]
+    },
+    {
+      "id": "mmoitemUpdater",
+      "name": "mmoItem自動更新",
+      "shortDescription": "修改mmoitems後，自動更新玩家所擁有的裝備武器",
+      "description": "武器裝備太強勢需要修調整得一位一位玩家回收?這個插件可以幫助你",
+      "category": "utility",
+      "version": "1.0.0",
+      "mcVersion": "1.20.6 - 1.21.4",
+      "lastUpdate": "2025-07-18",
+      "icon": "💰",
+      "iconImage": "assets/images/plugins/mmoitemUpdater.png",
+      "featured": true,
+      "demoVideo": "https://www.youtube.com/embed/Hu4avV1FYmk?si=SJaDohAs2uXh41EY",
+      "features": [
+        "自動更新武器裝備，讓管理員不必忙於回收道具",
+        "提供指令讓管理員強制更新其他玩家的道具",
+        "免費下載於 https://github.com/Ninepin123/mmoitemUpdater"
+      ],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2025-07-18",
+          "changes": "初版製作完成"
+        }
+      ]
     }
   ],
   "categories": [
