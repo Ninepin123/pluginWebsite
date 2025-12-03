@@ -225,7 +225,7 @@ class PluginManager {
                 </div>
                 
                 <div class="plugin-card-footer">
-                    <a href="/plugin-detail?id=${plugin.id}" class="btn btn-primary btn-small">
+                    <a href="plugin-detail.html?id=${plugin.id}" class="btn btn-primary btn-small">
                         DETAILS_VIEW
                     </a>
                 </div>
@@ -342,7 +342,7 @@ class HomePageLoader {
             const response = await fetch('data/plugins.json');
             const data = await response.json();
             const featuredPlugins = data.plugins.filter(plugin => plugin.featured).slice(0, 3);
-            
+
             this.renderFeaturedPlugins(featuredPlugins);
         } catch (error) {
             console.error('Failed to load featured plugins:', error);
@@ -373,7 +373,7 @@ class HomePageLoader {
                 </div>
                 
                 <div class="plugin-card-footer">
-                    <a href="/plugin-detail?id=${plugin.id}" class="btn btn-secondary btn-small">
+                    <a href="plugin-detail.html?id=${plugin.id}" class="btn btn-secondary btn-small">
                         DETAILS_VIEW
                     </a>
                 </div>
