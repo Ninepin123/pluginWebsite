@@ -206,7 +206,7 @@ class PluginDetailPage {
                                 <span class="related-plugin-category">${this.getCategoryInfo(plugin.category).name}</span>
                             </div>
                         </div>
-                        <a href="plugin-detail.html?id=${plugin.id}" class="related-plugin-link">
+                        <a href="/plugin-detail?id=${plugin.id}" class="related-plugin-link">
                             查看
                         </a>
                     </div>

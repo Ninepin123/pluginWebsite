@@ -30,14 +30,30 @@ class PluginManager {
 
     async loadPluginData() {
         try {
+            console.log('Attempting to load plugins.json...');
             const response = await fetch('data/plugins.json');
+            console.log('Response status:', response.status);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
             const data = await response.json();
+            console.log('Loaded data:', data);
+
+            if (!data.plugins || !Array.isArray(data.plugins)) {
+                throw new Error('Invalid data format: plugins array not found');
+            }
+
             this.plugins = data.plugins;
-            this.categories = data.categories;
+            this.categories = data.categories || [];
             this.filteredPlugins = [...this.plugins];
+
+            console.log(`Successfully loaded ${this.plugins.length} plugins`);
         } catch (error) {
             console.error('Failed to load plugin data:', error);
-            this.showError('無法載入插件數據，請稍後再試');
+            console.error('Error details:', error.message);
+            this.showError(`無法載入插件數據: ${error.message}`);
         }
     }
 
@@ -209,7 +225,7 @@ class PluginManager {
                 </div>
                 
                 <div class="plugin-card-footer">
-                    <a href="plugin-detail.html?id=${plugin.id}" class="btn btn-primary btn-small">
+                    <a href="/plugin-detail?id=${plugin.id}" class="btn btn-primary btn-small">
                         DETAILS_VIEW
                     </a>
                 </div>
@@ -357,7 +373,7 @@ class HomePageLoader {
                 </div>
                 
                 <div class="plugin-card-footer">
-                    <a href="plugin-detail.html?id=${plugin.id}" class="btn btn-secondary btn-small">
+                    <a href="/plugin-detail?id=${plugin.id}" class="btn btn-secondary btn-small">
                         DETAILS_VIEW
                     </a>
                 </div>
