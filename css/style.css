@@ -386,6 +386,14 @@ body {
     filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
+/* 插件網格布局 */
+.plugins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 /* 插件卡片 */
 .plugin-card {
     background: var(--bg-secondary);
@@ -501,6 +509,31 @@ body {
 
 /* 修正首頁 Featured Grid 的卡片內部間距 */
 .featured-grid .plugin-card-description {
+    margin-bottom: 1rem;
+}
+
+/* 插件列表區塊 */
+.plugins-section {
+    padding: 3rem 0;
+    min-height: 400px;
+}
+
+.loading {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.no-results {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-secondary);
+}
+
+.no-results h3 {
+    color: var(--primary-color);
+    font-family: var(--font-mono);
     margin-bottom: 1rem;
 }
 
