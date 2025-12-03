@@ -10,7 +10,7 @@
       "mcVersion": "1.20.6 - 1.21.4",
       "lastUpdate": "2025-07-03",
       "icon": "💰",
-      "iconImage": "assets/images/plugins/dungeon.png",
+      "iconImage": "/assets/images/plugins/dungeon.png",
       "featured": true,
       "demoVideo": "https://www.youtube.com/embed/6Fe8FfFlQr4?si=H-cdjveuOikO4SNm",
       "features": [
@@ -50,7 +50,7 @@
       "mcVersion": "1.20.6 - 1.21.4",
       "lastUpdate": "2025-05-03",
       "icon": "💰",
-      "iconImage": "assets/images/plugins/mailbox.png",
+      "iconImage": "/assets/images/plugins/mailbox.png",
       "featured": true,
       "demoVideo": "https://www.youtube.com/embed/mxuXVx01KOk?si=RhO2gBc1AWVJ3hhL",
       "features": [
@@ -82,7 +82,7 @@
       "mcVersion": "1.20.6 - 1.21.4",
       "lastUpdate": "2025-04-02",
       "icon": "💰",
-      "iconImage": "assets/images/plugins/pointBot.png",
+      "iconImage": "/assets/images/plugins/pointBot.png",
       "featured": true,
       "demoVideo": "https://www.youtube.com/embed/RGnQizQIJoQ?si=MzyJNo_itekqMK2B",
       "features": [
@@ -108,7 +108,7 @@
       "mcVersion": "1.20.6 - 1.21.4",
       "lastUpdate": "2025-03-01",
       "icon": "💰",
-      "iconImage": "assets/images/plugins/tombstone.png",
+      "iconImage": "/assets/images/plugins/tombstone.png",
       "featured": true,
       "demoVideo": "https://www.youtube.com/embed/Q5z52AYFRuA?si=mqteEj1sc2J8bbc7",
       "features": [
@@ -134,7 +134,7 @@
       "mcVersion": "1.20.6 - 1.21.4",
       "lastUpdate": "2025-07-18",
       "icon": "💰",
-      "iconImage": "assets/images/plugins/mmoitemUpdater.png",
+      "iconImage": "/assets/images/plugins/mmoitemUpdater.png",
       "featured": true,
       "demoVideo": "https://www.youtube.com/embed/Hu4avV1FYmk?si=SJaDohAs2uXh41EY",
       "features": [

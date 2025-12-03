@@ -31,7 +31,7 @@ class PluginManager {
     async loadPluginData() {
         try {
             console.log('Attempting to load plugins.json...');
-            const response = await fetch('data/plugins.json');
+            const response = await fetch('/data/plugins.json');
             console.log('Response status:', response.status);
 
             if (!response.ok) {
@@ -339,7 +339,7 @@ class HomePageLoader {
 
     async loadFeaturedPlugins() {
         try {
-            const response = await fetch('data/plugins.json');
+            const response = await fetch('/data/plugins.json');
             const data = await response.json();
             const featuredPlugins = data.plugins.filter(plugin => plugin.featured).slice(0, 3);
 

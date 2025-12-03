@@ -44,7 +44,7 @@ class PluginDetailPage {
 
     async loadPluginData(pluginId) {
         try {
-            const response = await fetch('data/plugins.json');
+            const response = await fetch('/data/plugins.json');
             const data = await response.json();
             this.plugin = data.plugins.find(plugin => plugin.id === pluginId);
             this.allPlugins = data.plugins;
