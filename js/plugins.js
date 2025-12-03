@@ -371,13 +371,14 @@ class HomePageLoader {
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 檢查當前頁面
-    const currentPage = window.location.pathname;
+    // 檢查頁面元素來決定初始化哪個功能
+    const pluginsGrid = document.getElementById('pluginsGrid');
+    const heroSection = document.querySelector('.hero');
 
-    if (currentPage.includes('plugins.html')) {
+    if (pluginsGrid) {
         // 插件列表頁
         window.pluginManager = new PluginManager();
-    } else if (currentPage.includes('index.html') || currentPage === '/') {
+    } else if (heroSection) {
         // 首頁
         window.homePageLoader = new HomePageLoader();
     }

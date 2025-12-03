@@ -774,7 +774,8 @@ document.head.appendChild(detailStyleElement);
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('plugin-detail.html')) {
+    // 檢查頁面元素來決定是否初始化
+    if (document.getElementById('pluginName')) {
         window.pluginDetailPage = new PluginDetailPage();
     }
 });
