@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Minecraft 插件開發服務 - 首頁</title>
+    <title>奶瓶開發 | Minecraft 插件解決方案</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Fira Code 用於等寬字體 -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="icon" href="assets/icons/favicon.ico">
+    <style>
+        /* 覆蓋代碼字體變數 */
+        :root {
+            --font-mono: 'Fira Code', 'Consolas', monospace;
+        }
+    </style>
 </head>
 <body>
     <!-- 導航欄 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <img src="assets/icons/minecraft-block.jpg" alt="Logo" class="nav-logo">
-                <span class="nav-title">npstudio 開發</span>
-            </div>
+            <a href="index.html" class="nav-brand">
+                <span class="nav-title">NP_STUDIO</span>
+            </a>
             <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">_HOME</a></li>
+                <li class="nav-item"><a href="plugins.html" class="nav-link">_PLUGINS</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">_CONTACT</a></li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">首頁</a>
-                </li>
-                <li class="nav-item">
-                    <a href="plugins.html" class="nav-link">作品集</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">聯絡我</a>
-                </li>
-                <li class="nav-item">
-                    <button class="theme-toggle" id="themeToggle">
-                        <span class="theme-icon">🌙</span>
-                    </button>
+                    <button class="theme-toggle" id="themeToggle">◐</button>
                 </li>
             </ul>
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <!-- 漢堡選單樣式需對應更新，暫略 -->
             </div>
         </div>
     </nav>
@@ -44,143 +43,127 @@
     <main class="main-content">
         <!-- 英雄區塊 -->
         <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">npstudio Minecraft 插件開發</h1>
-                <p class="hero-subtitle">為您的伺服器量身打造獨特的遊戲體驗</p>
-                <div class="hero-buttons">
-                    <a href="plugins.html" class="btn btn-primary">查看作品</a>
-                    <a href="about.html#contact" class="btn btn-secondary">聯絡接案</a>
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <span class="hero-badge">:: SYSTEM_READY ::</span>
+                    <h1 class="hero-title">
+                        CODE YOUR<br>
+                        <span class="text-highlight">IMAGINATION</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        專注於高效能 Minecraft 插件架構。從單一功能到複雜生態系統，
+                        我們提供乾淨、穩定且可擴展的解決方案。
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="plugins.html" class="btn btn-primary">
+                            EXPLORE_WORKS
+                        </a>
+                        <a href="about.html" class="btn btn-secondary">
+                            INIT_CONTACT
+                        </a>
+                    </div>
+                    
+                    <!-- 數據儀表 -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="4">0</div>
+                            <div class="stat-label">PROJECTS_COMPLETED</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">CLIENTS_ACTIVE</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">RATING_AVG</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-decoration">
-                <div class="floating-blocks">
-                    <div class="block block-grass"></div>
-                    <div class="block block-stone"></div>
-                    <div class="block block-gold"></div>
+                
+                <!-- 右側終端機視覺 -->
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-title">user@npstudio:~/projects</span>
+                            <div class="terminal-controls">
+                                <div class="control"></div>
+                                <div class="control"></div>
+                            </div>
+                        </div>
+                        <div class="terminal-body">
+                            <div><span class="path">~</span> <span class="cmd">npstudio</span> <span class="arg">init</span> --target=minecraft</div>
+                            <br>
+                            <div>> Initializing Core System... <span style="color:var(--success-color)">[OK]</span></div>
+                            <div>> Loading Modules:</div>
+                            <div>  - Economy_API... <span style="color:var(--success-color)">[Loaded]</span></div>
+                            <div>  - Dungeon_Gen... <span style="color:var(--success-color)">[Loaded]</span></div>
+                            <div>  - GUI_Framework... <span style="color:var(--success-color)">[Loaded]</span></div>
+                            <br>
+                            <div>> System Ready. Waiting for input...</div>
+                            <div><span class="path">~</span> <span class="cursor"></span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 統計數據 -->
-        <section class="stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">💼</div>
-                        <div class="stat-number" data-target="4">0</div>
-                        <div class="stat-label">完成專案</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-number" data-target="3">0</div>
-                        <div class="stat-label">滿意客戶</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">⭐</div>
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-label">客戶評價</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 精選插件 -->
-        <section class="featured" id="featured">
+        <!-- 精選服務 (重寫為 Features 網格) -->
+        <section class="features" style="padding: 6rem 0;">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">精選作品</h2>
-                    <p class="section-subtitle">展示我的專業技術實力與創新能力</p>
+                    <h2 class="section-title">CORE_SERVICES</h2>
+                    <p class="hero-subtitle">我們提供的技術核心能力</p>
                 </div>
-                <div class="featured-grid">
-                    <!-- 插件卡片將由JavaScript動態載入 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 特色功能 -->
-        <section class="features">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">npstudio插件開發服務</h2>
-                </div>
-                <div class="features-grid">
+                <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">&lt;/&gt;</div>
+                        <h3 class="plugin-card-title">Custom Development</h3>
+                        <p style="color: #888; font-size: 0.9rem;">完全客製化的插件開發，針對您的伺服器需求量身打造高效率代碼。</p>
+                    </div>
                     <div class="feature-card">
                         <div class="feature-icon">⚡</div>
-                        <h3 class="feature-title">高效開發</h3>
-                        <p class="feature-description">優質程式碼架構，確保插件高性能運行，提升伺服器體驗</p>
+                        <h3 class="plugin-card-title">Performance Optimization</h3>
+                        <p style="color: #888; font-size: 0.9rem;">優化現有系統，降低延遲 (TPS)，確保大型伺服器的流暢運行。</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3 class="feature-title">客製化需求</h3>
-                        <p class="feature-description">根據您的具體需求量身打造，完全符合伺服器特色</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
-                        <h3 class="feature-title">品質保證</h3>
-                        <p class="feature-description">嚴格測試流程，確保插件穩定性和安全性，提供後續維護</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🤝</div>
-                        <h3 class="feature-title">專業服務</h3>
-                        <p class="feature-description">從需求分析到部署上線，提供完整的技術支援服務</p>
+                        <div class="feature-icon">🛠</div>
+                        <h3 class="plugin-card-title">System Integration</h3>
+                        <p style="color: #888; font-size: 0.9rem;">整合資料庫 (MySQL/Redis) 與第三方 API，構建完整的伺服器後端。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 服務流程 -->
-        <section class="process">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">專業開發流程</h2>
-                    <p class="section-subtitle">從需求分析到實際使用，提供完整的開發服務</p>
-                </div>
-                <div class="process-grid">
-                    <div class="process-step">
-                        <div class="step-number">01</div>
-                        <h3 class="step-title">需求分析</h3>
-                        <p class="step-description">深入了解您的伺服器特色和功能需求，制定最適合的解決方案</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">02</div>
-                        <h3 class="step-title">設計開發</h3>
-                        <p class="step-description">運用專業技術進行插件開發，確保代碼品質和性能優化</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">03</div>
-                        <h3 class="step-title">測試驗收</h3>
-                        <p class="step-description">嚴格的測試流程，確保插件穩定性和功能完整性</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">04</div>
-                        <h3 class="step-title">後續維護</h3>
-                        <p class="step-description">協助上線，提供後續技術支援和維護服務</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- 頁腳 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
                 <div class="footer-section">
-                    <h3 class="footer-title">服務導覽</h3>
-                    <ul class="footer-links">
-                        <li><a href="plugins.html">開發作品</a></li>
-                        <li><a href="about.html">關於我</a></li>
+                    <h3 class="footer-title">NP_STUDIO</h3>
+                    <p style="color: #666; font-size: 0.85rem; max-width: 300px;">
+                        Building the next generation of Minecraft server experiences through code.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">LINKS</h3>
+                    <ul class="footer-links" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="plugins.html">/plugins</a></li>
+                        <li><a href="about.html">/about</a></li>
+                        <li><a href="https://github.com/Ninepin123">/github</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 npstudio 插件開發服務. 保留所有權利.</p>
+            <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #222; text-align: center; color: #444; font-size: 0.8rem; font-family: var(--font-mono);">
+                &copy; 2025 NP_STUDIO. ALL SYSTEMS OPERATIONAL.
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/animations.js"></script>
 </body>
-</html> 
+</html>

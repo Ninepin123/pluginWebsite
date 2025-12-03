@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pluginTitle">專案詳情 - 專業 Minecraft 插件開發</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="icon" href="assets/icons/favicon.ico">
+    <style>
+        /* 覆蓋代碼字體變數 */
+        :root {
+            --font-mono: 'Fira Code', 'Consolas', monospace;
+        }
+    </style>
 </head>
 <body>
     <!-- 導航欄 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <img src="assets/icons/minecraft-block.jpg" alt="Logo" class="nav-logo">
-                <span class="nav-title">專業開發</span>
-            </div>
+            <a href="index.html" class="nav-brand">
+                <span class="nav-title">NP_STUDIO</span>
+            </a>
             <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">_HOME</a></li>
+                <li class="nav-item"><a href="plugins.html" class="nav-link active">_PLUGINS</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">_CONTACT</a></li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">首頁</a>
-                </li>
-                <li class="nav-item">
-                    <a href="plugins.html" class="nav-link">作品集</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">聯絡我</a>
-                </li>
-                <li class="nav-item">
-                    <button class="theme-toggle" id="themeToggle">
-                        <span class="theme-icon">🌙</span>
-                    </button>
+                    <button class="theme-toggle" id="themeToggle">◐</button>
                 </li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -189,34 +189,24 @@
     <!-- 頁腳 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
                 <div class="footer-section">
-                    <h3 class="footer-title">快速連結</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">首頁</a></li>
-                        <li><a href="plugins.html">插件列表</a></li>
-                        <li><a href="about.html">關於我</a></li>
-                    </ul>
+                    <h3 class="footer-title">NP_STUDIO</h3>
+                    <p style="color: #666; font-size: 0.85rem; max-width: 300px;">
+                        Building the next generation of Minecraft server experiences through code.
+                    </p>
                 </div>
                 <div class="footer-section">
-                    <h3 class="footer-title">社群媒體</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/Ninepin123" class="social-link" target="_blank">GitHub</a>
-                        <a href="https://discord.com/invite/CDZK7Q4rst" class="social-link" target="_blank">Discord</a>
-                        <a href="#" class="social-link">YouTube</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3 class="footer-title">支援</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">常見問題</a></li>
-                        <li><a href="#">技術支援</a></li>
-                        <li><a href="#">問題回報</a></li>
+                    <h3 class="footer-title">LINKS</h3>
+                    <ul class="footer-links" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="plugins.html">/plugins</a></li>
+                        <li><a href="about.html">/about</a></li>
+                        <li><a href="https://github.com/Ninepin123">/github</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Minecraft 插件展示. 保留所有權利.</p>
+            <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #222; text-align: center; color: #444; font-size: 0.8rem; font-family: var(--font-mono);">
+                &copy; 2025 NP_STUDIO. ALL SYSTEMS OPERATIONAL.
             </div>
         </div>
     </footer>

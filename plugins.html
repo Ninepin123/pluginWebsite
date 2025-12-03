@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>開發作品集 - 專業 Minecraft 插件開發服務</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="icon" href="assets/icons/favicon.ico">
+    <style>
+        /* 覆蓋代碼字體變數 */
+        :root {
+            --font-mono: 'Fira Code', 'Consolas', monospace;
+        }
+    </style>
 </head>
 <body>
     <!-- 導航欄 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <img src="assets/icons/minecraft-block.jpg" alt="Logo" class="nav-logo">
-                <span class="nav-title">專業開發</span>
-            </div>
+            <a href="index.html" class="nav-brand">
+                <span class="nav-title">NP_STUDIO</span>
+            </a>
             <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">_HOME</a></li>
+                <li class="nav-item"><a href="plugins.html" class="nav-link active">_PLUGINS</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">_CONTACT</a></li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">首頁</a>
-                </li>
-                <li class="nav-item">
-                    <a href="plugins.html" class="nav-link active">作品集</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">專業服務</a>
-                </li>
-                <li class="nav-item">
-                    <button class="theme-toggle" id="themeToggle">
-                        <span class="theme-icon">🌙</span>
-                    </button>
+                    <button class="theme-toggle" id="themeToggle">◐</button>
                 </li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -45,66 +45,68 @@
         <!-- 頁面標題 -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">開發作品集</h1>
-                <p class="page-subtitle">展示我的 Minecraft 插件開發實力與專業技術</p>
+                <div class="terminal-header-style">
+                    <span class="path">root@npstudio:~/plugins#</span> <span class="cmd">ls -la</span>
+                </div>
+                <h1 class="page-title">_PLUGIN_REPOSITORY</h1>
+                <p class="page-subtitle">> Indexing all available modules and system expansions...</p>
             </div>
         </section>
 
-        <!-- 團隊特色與服務介紹 -->
-        <section class="team-intro">
+        <!-- 團隊特色與服務介紹 (重構為系統規格表) -->
+        <section class="system-specs">
             <div class="container">
-                <div class="intro-grid">
-                    <!-- 團隊特色 -->
-                    <div class="intro-card">
-                        <div class="intro-header">
-                            <div class="intro-icon">🎯</div>
-                            <h2 class="intro-title">團隊特色</h2>
+                <div class="specs-grid">
+                    <!-- 系統能力 -->
+                    <div class="spec-panel">
+                        <div class="spec-header">
+                            <span class="spec-title">:: SYSTEM_CAPABILITIES ::</span>
                         </div>
-                        <ul class="intro-features">
-                            <li class="feature-item">
-                                <span class="feature-icon">⚡</span>
-                                <span class="feature-text">各種客製化需求，小到一個指令，大到一個系統！！</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">🎮</span>
-                                <span class="feature-text">設定簡單，操作方便</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">💬</span>
-                                <span class="feature-text">與開發者直接對談，省去溝通成本</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">💰</span>
-                                <span class="feature-text">價格實惠，隨時回報進度</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="feature-icon">🔧</span>
-                                <span class="feature-text">免費後續維護，若有額外功能需求也會有所折價</span>
-                            </li>
-                        </ul>
+                        <div class="spec-body">
+                            <div class="spec-row">
+                                <span class="spec-key">[CUSTOM]</span>
+                                <span class="spec-val">Fully tailored solutions, from simple commands to complex ecosystems.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">[UX/UI]</span>
+                                <span class="spec-val">Simplified configuration & intuitive operation interfaces.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">[COMM]</span>
+                                <span class="spec-val">Direct developer channel. No middleman latency.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">[COST]</span>
+                                <span class="spec-val">Optimized pricing structure with real-time progress tracking.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">[MAINT]</span>
+                                <span class="spec-val">Lifetime legacy support. Discounted upgrades.</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- 主要開發 -->
-                    <div class="intro-card">
-                        <div class="intro-header">
-                            <div class="intro-icon">🛠️</div>
-                            <h2 class="intro-title">主要開發</h2>
+                    <!-- 核心相容性 -->
+                    <div class="spec-panel">
+                        <div class="spec-header">
+                            <span class="spec-title">:: CORE_COMPATIBILITY ::</span>
                         </div>
-                        <div class="development-info">
-                            <div class="dev-section">
-                                <h3 class="dev-subtitle">支援核心</h3>
-                                <div class="platform-tags">
-                                    <span class="platform-tag supported">Paper</span>
-                                    <span class="platform-tag supported">Spigot</span>
-                                    <span class="platform-tag supported">Bukkit</span>
+                        <div class="spec-body">
+                            <div class="platform-list">
+                                <div class="platform-item supported">
+                                    <span class="status-dot"></span> PAPER_SPIGOT
+                                </div>
+                                <div class="platform-item supported">
+                                    <span class="status-dot"></span> BUKKIT_API
+                                </div>
+                                <div class="platform-item supported">
+                                    <span class="status-dot"></span> SPIGOT_LTS
                                 </div>
                             </div>
-                            <div class="dev-section">
-                                <h3 class="dev-subtitle">暫不支援</h3>
-                                <div class="platform-tags">
-                                    <span class="platform-tag not-supported">Folia</span>
-                                </div>
-                                <p class="dev-note">Folia 核心暫不接單</p>
+                            
+                            <div class="platform-warning">
+                                <span class="warning-icon">!</span>
+                                <span class="warning-text">FOLIA_CORE :: NOT_SUPPORTED</span>
                             </div>
                         </div>
                     </div>
@@ -117,27 +119,37 @@
             <div class="container">
                 <div class="filter-bar">
                     <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="搜尋作品..." class="search-input">
-                        <button class="search-btn">🔍</button>
+                        <span class="search-prompt">> find --name="</span>
+                        <input type="text" id="searchInput" class="search-input" placeholder="...">
+                        <span class="search-suffix">"</span>
                     </div>
                     <div class="filter-options">
-                        <select id="categoryFilter" class="filter-select">
-                            <option value="">所有分類</option>
-                            <option value="economy">經濟系統</option>
-                            <option value="pvp">PVP</option>
-                            <option value="utility">實用工具</option>
-                            <option value="fun">娛樂</option>
-                            <option value="admin">管理工具</option>
-                        </select>
-                        <select id="versionFilter" class="filter-select">
-                            <option value="">所有版本</option>
-                            <option value="1.21">1.21.x</option>
-                            <option value="1.20">1.20.x</option>                            
-                        </select>
-                        <select id="sortFilter" class="filter-select">
-                            <option value="name">按名稱排序</option>
-                            <option value="updated">按更新時間排序</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <span class="select-label">--category=</span>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="">*</option>
+                                <option value="economy">ECONOMY</option>
+                                <option value="pvp">COMBAT</option>
+                                <option value="utility">UTILS</option>
+                                <option value="fun">ENTERTAINMENT</option>
+                                <option value="admin">ADMIN</option>
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <span class="select-label">--ver=</span>
+                            <select id="versionFilter" class="filter-select">
+                                <option value="">LATEST</option>
+                                <option value="1.21">1.21.x</option>
+                                <option value="1.20">1.20.x</option>                            
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <span class="select-label">--sort=</span>
+                            <select id="sortFilter" class="filter-select">
+                                <option value="name">NAME_ASC</option>
+                                <option value="updated">DATE_DESC</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,13 +162,11 @@
                     <!-- 插件卡片將由JavaScript動態載入 -->
                 </div>
                 <div class="loading" id="loading">
-                    <div class="loading-spinner"></div>
-                    <p>載入中...</p>
+                    <p class="blink">INITIALIZING_DATA_STREAM...</p>
                 </div>
                 <div class="no-results" id="noResults" style="display: none;">
-                    <div class="no-results-icon">😔</div>
-                    <h3>沒有找到符合條件的作品</h3>
-                    <p>請嘗試調整搜尋條件或瀏覽其他分類</p>
+                    <h3>ERROR: 404_MODULE_NOT_FOUND</h3>
+                    <p>> Try adjusting search parameters.</p>
                 </div>
             </div>
         </section>
@@ -165,34 +175,24 @@
     <!-- 頁腳 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
                 <div class="footer-section">
-                    <h3 class="footer-title">服務導覽</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">首頁</a></li>
-                        <li><a href="about.html">專業服務</a></li>
-                        <li><a href="#contact">聯絡接案</a></li>
-                    </ul>
+                    <h3 class="footer-title">NP_STUDIO</h3>
+                    <p style="color: #666; font-size: 0.85rem; max-width: 300px;">
+                        Building the next generation of Minecraft server experiences through code.
+                    </p>
                 </div>
                 <div class="footer-section">
-                    <h3 class="footer-title">專業平台</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/Ninepin123" class="social-link" target="_blank">GitHub</a>
-                        <a href="https://discord.com/invite/CDZK7Q4rst" class="social-link" target="_blank">Discord</a>
-                        <a href="plugins.html" class="social-link">作品集</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3 class="footer-title">客戶服務</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">需求評估</a></li>
-                        <li><a href="#">技術諮詢</a></li>
-                        <li><a href="#">報價詢問</a></li>
+                    <h3 class="footer-title">LINKS</h3>
+                    <ul class="footer-links" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="plugins.html">/plugins</a></li>
+                        <li><a href="about.html">/about</a></li>
+                        <li><a href="https://github.com/Ninepin123">/github</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 專業 Minecraft 插件開發服務. 保留所有權利.</p>
+            <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #222; text-align: center; color: #444; font-size: 0.8rem; font-family: var(--font-mono);">
+                &copy; 2025 NP_STUDIO. ALL SYSTEMS OPERATIONAL.
             </div>
         </div>
     </footer>

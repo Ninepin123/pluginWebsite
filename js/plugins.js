@@ -193,7 +193,7 @@ class PluginManager {
                 <div class="plugin-card-header">
                     <div class="plugin-card-icon">
                         ${plugin.iconImage ? 
-                            `<img src="${plugin.iconImage}" alt="${plugin.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">` : 
+                            `<img src="${plugin.iconImage}" alt="${plugin.name}">` : 
                             plugin.icon
                         }
                     </div>
@@ -203,28 +203,14 @@ class PluginManager {
                     <p class="plugin-card-description">${plugin.shortDescription}</p>
                     
                     <div class="plugin-card-meta">
-                        <span class="plugin-category">${categoryInfo.name}</span>
-                    </div>
-                    
-                    <div class="plugin-info">
-                        <div class="plugin-info-item">
-                            <span class="info-label">版本:</span>
-                            <span class="info-value">${plugin.version}</span>
-                        </div>
-                        <div class="plugin-info-item">
-                            <span class="info-label">Minecraft:</span>
-                            <span class="info-value">${plugin.mcVersion}</span>
-                        </div>
-                        <div class="plugin-info-item">
-                            <span class="info-label">更新:</span>
-                            <span class="info-value">${this.formatDate(plugin.lastUpdate)}</span>
-                        </div>
+                        <span class="plugin-category">#${categoryInfo.name}</span>
+                        <span style="font-size: 0.8rem; color: #666; font-family: var(--font-mono);">${plugin.mcVersion}</span>
                     </div>
                 </div>
                 
                 <div class="plugin-card-footer">
                     <a href="plugin-detail.html?id=${plugin.id}" class="btn btn-primary btn-small">
-                        查看案例
+                        DETAILS_VIEW
                     </a>
                 </div>
             </div>
@@ -356,7 +342,7 @@ class HomePageLoader {
                 <div class="plugin-card-header">
                     <div class="plugin-card-icon">
                         ${plugin.iconImage ? 
-                            `<img src="${plugin.iconImage}" alt="${plugin.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">` : 
+                            `<img src="${plugin.iconImage}" alt="${plugin.name}">` : 
                             plugin.icon
                         }
                     </div>
@@ -366,13 +352,13 @@ class HomePageLoader {
                     <p class="plugin-card-description">${plugin.shortDescription}</p>
                     
                     <div class="plugin-card-meta">
-                        <span class="plugin-category">${plugin.category}</span>
+                        <span class="plugin-category">#${plugin.category}</span>
                     </div>
                 </div>
                 
                 <div class="plugin-card-footer">
-                    <a href="plugin-detail.html?id=${plugin.id}" class="btn btn-primary btn-small">
-                        查看案例
+                    <a href="plugin-detail.html?id=${plugin.id}" class="btn btn-secondary btn-small">
+                        DETAILS_VIEW
                     </a>
                 </div>
             </div>
