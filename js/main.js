@@ -16,7 +16,7 @@ class MinecraftPluginShowcase {
 
     initTheme() {
         // 從本地存儲獲取主題設定
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         this.setTheme(savedTheme);
 
         // 綁定主題切換按鈕
