@@ -43,16 +43,187 @@ class PluginDetailPage {
     // ==========================================
 
     async loadPluginData(pluginId) {
-        try {
-            const response = await fetch('/data/plugins.json');
-            const data = await response.json();
-            this.plugin = data.plugins.find(plugin => plugin.id === pluginId);
-            this.allPlugins = data.plugins;
-            this.categories = data.categories;
-        } catch (error) {
-            console.error('Failed to load plugin data:', error);
-            window.MinecraftUtils?.showNotification('載入插件資料失敗', 'error');
-        }
+        // 硬編碼的數據
+        const data = {
+            "plugins": [
+                {
+                    "id": "DungeonSystem",
+                    "name": "DungeonSystem",
+                    "shortDescription": "完整的副本系統，簡單設定，一看就上手",
+                    "description": "這是一個包含副本設定，派對系統，復活系統，排行榜等多功能系統的副本插件，讓您的玩家有新奇的副本體驗",
+                    "category": "dungeon",
+                    "version": "1.0.3",
+                    "mcVersion": "1.20.6 - 1.21.4",
+                    "lastUpdate": "2025-07-03",
+                    "icon": "💰",
+                    "iconImage": "/assets/images/plugins/dungeon.png",
+                    "featured": true,
+                    "demoVideo": "https://www.youtube.com/embed/6Fe8FfFlQr4?si=H-cdjveuOikO4SNm",
+                    "features": [
+                        "完整的config檔案設定",
+                        "自定義怪物生成，副本波次",
+                        "復活系統設定",
+                        "相容於oraxen，可以自行修改副本入場鑰匙材質",
+                        "完全兼容mythicmob",
+                        "排行榜系統，各種placeHolder變量",
+                        "副本鑰匙冷卻完全可以自定義，並提供額外指令可以做為vip用途"
+                    ],
+                    "versions": [
+                        {
+                            "version": "1.0.3",
+                            "date": "2025-07-03",
+                            "changes": "新增總副本數排行"
+                        },
+                        {
+                            "version": "1.0.2",
+                            "date": "2025-06-12",
+                            "changes": "新增波次副本類型，新增復活系統開關"
+                        },
+                        {
+                            "version": "1.0.0",
+                            "date": "2025-03-05",
+                            "changes": "初版製作完成"
+                        }
+                    ]
+                },
+                {
+                    "id": "MailBox",
+                    "name": "信箱系統",
+                    "shortDescription": "簡單好用的信箱系統",
+                    "description": "想要發送獎勵給玩家卻又怕有玩家沒上線無法領取?不想要拿著物品一個一個打指令發送給玩家?那我們就是你要的選擇",
+                    "category": "utility",
+                    "version": "1.1.0",
+                    "mcVersion": "1.20.6 - 1.21.4",
+                    "lastUpdate": "2025-05-03",
+                    "icon": "💰",
+                    "iconImage": "/assets/images/plugins/mailbox.png",
+                    "featured": true,
+                    "demoVideo": "https://www.youtube.com/embed/mxuXVx01KOk?si=RhO2gBc1AWVJ3hhL",
+                    "features": [
+                        "不需要額外設定，安裝即可使用",
+                        "支援MySQL",
+                        "完整的API可以調用",
+                        "支援線下玩家物品發送"
+                    ],
+                    "versions": [
+                        {
+                            "version": "1.1.0",
+                            "date": "2025-07-12",
+                            "changes": "添加MySQL資料儲存功能"
+                        },
+                        {
+                            "version": "1.0.0",
+                            "date": "2025-03-05",
+                            "changes": "初版製作完成"
+                        }
+                    ]
+                },
+                {
+                    "id": "playerPointBot",
+                    "name": "點數機器人",
+                    "shortDescription": "透過DC給予玩家贊助點數",
+                    "description": "依賴discord SRV，新增功能來讓你可以在DC就給予玩家贊助點數，用手機也能即時處理贊助需求",
+                    "category": "discord",
+                    "version": "1.0.0",
+                    "mcVersion": "1.20.6 - 1.21.4",
+                    "lastUpdate": "2025-04-02",
+                    "icon": "💰",
+                    "iconImage": "/assets/images/plugins/pointBot.png",
+                    "featured": true,
+                    "demoVideo": "https://www.youtube.com/embed/RGnQizQIJoQ?si=MzyJNo_itekqMK2B",
+                    "features": [
+                        "不需要額外設定，安裝即可使用",
+                        "config檔案調整顯示文字",
+                        "記錄點數操作，誰給了多少點一目了然"
+                    ],
+                    "versions": [
+                        {
+                            "version": "1.0.0",
+                            "date": "2025-04-02",
+                            "changes": "初版製作完成"
+                        }
+                    ]
+                },
+                {
+                    "id": "tomestone",
+                    "name": "墓碑插件",
+                    "shortDescription": "玩家死亡後，在原地產生墓碑",
+                    "description": "想要生存噴裝，但怕被清理物品插件清掉嗎？那你一定要看看這個",
+                    "category": "utility",
+                    "version": "1.0.0",
+                    "mcVersion": "1.20.6 - 1.21.4",
+                    "lastUpdate": "2025-03-01",
+                    "icon": "💰",
+                    "iconImage": "/assets/images/plugins/tombstone.png",
+                    "featured": true,
+                    "demoVideo": "https://www.youtube.com/embed/Q5z52AYFRuA?si=mqteEj1sc2J8bbc7",
+                    "features": [
+                        "不需要額外設定，安裝即可使用",
+                        "提供額外指令來讓玩家可以遠端獲取墓碑內物品",
+                        "自己只能開自己的墓碑，有效避免糾紛"
+                    ],
+                    "versions": [
+                        {
+                            "version": "1.0.0",
+                            "date": "2025-03-02",
+                            "changes": "初版製作完成"
+                        }
+                    ]
+                },
+                {
+                    "id": "mmoitemUpdater",
+                    "name": "mmoItem自動更新",
+                    "shortDescription": "修改mmoitems後，自動更新玩家所擁有的裝備武器",
+                    "description": "武器裝備太強勢需要修調整得一位一位玩家回收?這個插件可以幫助你",
+                    "category": "utility",
+                    "version": "1.0.0",
+                    "mcVersion": "1.20.6 - 1.21.4",
+                    "lastUpdate": "2025-07-18",
+                    "icon": "💰",
+                    "iconImage": "/assets/images/plugins/mmoitemUpdater.png",
+                    "featured": true,
+                    "demoVideo": "https://www.youtube.com/embed/Hu4avV1FYmk?si=SJaDohAs2uXh41EY",
+                    "features": [
+                        "自動更新武器裝備，讓管理員不必忙於回收道具",
+                        "提供指令讓管理員強制更新其他玩家的道具",
+                        "免費下載於 https://github.com/Ninepin123/mmoitemUpdater"
+                    ],
+                    "versions": [
+                        {
+                            "version": "1.0.0",
+                            "date": "2025-07-18",
+                            "changes": "初版製作完成"
+                        }
+                    ]
+                }
+            ],
+            "categories": [
+                {
+                    "id": "dungeon",
+                    "name": "副本系統",
+                    "description": "副本、Mythicmob相關插件"
+                },
+                {
+                    "id": "utility",
+                    "name": "實用工具",
+                    "description": "輔助功能和實用工具插件"
+                },
+                {
+                    "id": "discord",
+                    "name": "DC機器人",
+                    "description": "串接遊戲內與dc的互動"
+                },
+                {
+                    "id": "admin",
+                    "name": "管理工具",
+                    "description": "伺服器管理和維護插件"
+                }
+            ]
+        };
+        
+        this.plugin = data.plugins.find(plugin => plugin.id === pluginId);
+        this.allPlugins = data.plugins;
+        this.categories = data.categories;
     }
 
     // ==========================================
